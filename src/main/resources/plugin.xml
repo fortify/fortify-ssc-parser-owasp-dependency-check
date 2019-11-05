@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin xmlns="xmlns://www.fortify.com/schema/pluginmanifest-1.0.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PluginDescriptor"
+        id="com.fortify.ssc.parser.owasp.dependencycheck" api-version="1.0">
+    <plugin-info>
+        <name>OWASP dependency-check parser plugin</name>
+        <version><!--VERSION-->0.0<!--/VERSION--></version>
+        <data-version>1</data-version>
+        <vendor name="Micro Focus" url="https://www.microfocus.com"/>
+        <description>OWASP dependency-check parser plugin</description>
+        <resources>
+            <localization>
+                <language id="default" location="/resources/dependency-check_en.properties"/>
+                <language id="en" location="/resources/dependency-check_en.properties"/>
+            </localization>
+            <images>
+                <image imageType="icon" location="/images/dependency-check-icon.png"/>
+                <image imageType="logo" location="/images/dependency-check-logo.png"/>
+            </images>
+        </resources>
+    </plugin-info>
+    <issue-parser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <engine-type>OWASP_DEPCHECK</engine-type>
+        <supported-engine-versions>[5.0, 5.2.2]</supported-engine-versions>
+        <view-template location="/viewtemplate/OWASPDependencyCheckTemplate.json">
+            <description>Default OWASP dependency-check vulnerability view template.</description>
+        </view-template>
+    </issue-parser>
+</plugin>
+

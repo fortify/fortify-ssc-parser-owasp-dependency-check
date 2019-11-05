@@ -1,0 +1,105 @@
+[
+	[
+		{
+			"type": "template",
+			"title": "Description",
+			"key": "brief",
+			"templateId": "SIMPLE",
+			"dataType": "string"
+		}
+	],
+	[
+		{
+			"type": "fieldset",
+			"htmlClass": "container-spacer-bottom",
+			"items": [
+				{
+					"type": "template",
+					"title": "File name",
+					"key": "fullFileName",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Impact",
+					"key": "impact",
+					"templateId": "SIMPLE",
+					"dataType": "float"
+				},
+				{
+					"type": "template",
+					"title": "Criticality",
+					"key": "friority",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "CWE's",
+					"key": "customAttributes.cwes",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				}
+			]
+		}
+	],
+	[
+		{
+			"type": "template",
+			"title": "CVSS Information",
+			"templateId": "TITLEBOX",
+			"items": [
+				{
+					"type": "template",
+					"title": "Score",
+					"key": "customAttributes.cvssScore",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Access Vector",
+					"key": "customAttributes.cvssAccessVector",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Access Complexity",
+					"key": "customAttributes.cvssAccessComplexity",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				}
+			]
+		},
+		{
+			"type": "template",
+			"title": "CVSS IMPACT (CIA)",
+			"templateId": "TITLEBOX",
+			"items": [
+				{
+					"type": "template",
+					"title": "Confidentiality",
+					"key": "customAttributes.cvssConfidentialImpact",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Integrity",
+					"key": "customAttributes.cvssIntegrityImpact",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Availability",
+					"key": "customAttributes.cvssAvailabilityImpact",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				}
+			]
+		}
+	]
+]

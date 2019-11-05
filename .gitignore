@@ -1,0 +1,15 @@
+.gradle/
+.shelf/
+build/
+out/
+dist/
+*.iml
+*.iws
+*.ipr
+*~
+rebel.xml
+.idea/
+/fortifyRepository
+.settings/
+bin/
+lombok.config
