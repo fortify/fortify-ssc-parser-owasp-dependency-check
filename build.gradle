@@ -34,13 +34,6 @@ version = scm.version.version \
    .replaceFirst(/^(\d+\.)(\d+).+?(-SNAPSHOT)?$/, '$1$2$3') \
    .replaceFirst(/-SNAPSHOT/, ".00${getDate()}")
 
-if (!project.hasProperty('release')) {
-    // Gradle has been run without option -Prelease - auto increment plugin version
-    def time = System.currentTimeMillis().intdiv(1000)
-    def hours = time.intdiv(3600)
-    version = String.format('%s.%d', version, hours)
-}
-
 repositories {
 	mavenLocal()
     // repository with fortify artifacts
