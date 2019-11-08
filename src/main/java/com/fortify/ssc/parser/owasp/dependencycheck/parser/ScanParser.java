@@ -2,8 +2,6 @@ package com.fortify.ssc.parser.owasp.dependencycheck.parser;
 
 import java.io.IOException;
 
-import static com.fortify.util.json.AbstractStreamingJsonParser.countArrayEntries;
-
 import com.fortify.plugin.api.ScanBuilder;
 import com.fortify.plugin.api.ScanData;
 import com.fortify.plugin.api.ScanParsingException;
@@ -25,7 +23,7 @@ public class ScanParser {
 			.handler("/projectInfo/reportDate", jp -> scanBuilder.setScanDate(DateConverter.getInstance().convert(jp.getValueAsString())))
 			.handler("/projectInfo/name", jp -> scanBuilder.setBuildId(jp.getValueAsString()))
 			.handler("/projectInfo/version", jp -> scanBuilder.setScanLabel(jp.getValueAsString()))
-			.handler("/dependencies", jp -> scanBuilder.setNumFiles(countArrayEntries(jp)))
+			.handler("/dependencies", jp -> scanBuilder.setNumFiles(jp.countArrayEntries()))
 			.parse(scanData);
 		scanBuilder.completeScan();
 	}

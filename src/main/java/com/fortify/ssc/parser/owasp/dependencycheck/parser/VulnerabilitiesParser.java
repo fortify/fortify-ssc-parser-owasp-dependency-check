@@ -18,7 +18,7 @@ import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv2;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
 import com.fortify.ssc.parser.owasp.dependencycheck.parser.util.Constants;
-import com.fortify.util.json.handler.JsonArrayMapperHandler;
+import com.fortify.util.json.ExtendedJsonParser;
 import com.fortify.util.ssc.parser.ScanDataStreamingJsonParser;
 
 public class VulnerabilitiesParser {
@@ -38,8 +38,12 @@ public class VulnerabilitiesParser {
 	 */
 	public final void parse() throws ScanParsingException, IOException {
 		new ScanDataStreamingJsonParser()
-			.handler("/dependencies", new JsonArrayMapperHandler<>(dependency->handleDependency(dependency), Dependency.class))
+			.handler("/dependencies/*", this::handleDependency)
 			.parse(scanData);
+	}
+	
+	private final void handleDependency(ExtendedJsonParser jp) throws IOException {
+		handleDependency(jp.readValueAs(Dependency.class));
 	}
 	
     private final void handleDependency(Dependency dependency) {
