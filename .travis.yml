@@ -13,11 +13,8 @@ cache:
     
 stages:
   - name: build
-  - name: release
     
 jobs:
   include:
     - stage: build
-      script: /bin/sh ./gradlew build
-    - stage: release
-      script: /bin/sh ./gradlew bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
+      script: /bin/sh ./gradlew build bintrayUpload -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER

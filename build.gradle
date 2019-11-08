@@ -14,7 +14,6 @@ scm {
         type = 'threeDigits'
         initialVersion = '1.0.0'
         increment = 'MINOR'
-        continuousRelease = true
     }
 }
 
