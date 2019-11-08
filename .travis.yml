@@ -1,4 +1,5 @@
 language: java
+install: true
 sudo: false
 
 before_cache:
@@ -10,5 +11,10 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     
-script:
-  - /bin/sh ./gradlew build
+stages:
+  - name: build
+    
+jobs:
+  include:
+    - stage: build
+      script: /bin/sh ./gradlew build
