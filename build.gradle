@@ -22,16 +22,36 @@ ext {
     jacksonVersion = "2.8.4"
 }
 
-def getDate() {
+def getDateTime() {
     new Date().format('yyyyMMddHHmmssSSS')
 }
 
-// Project version based on SCM information
-// Reg-ex to generate format <major>.<minor>[.<date>]
-// With date part only added for snapshot versions
-version = scm.version.version \
-   .replaceFirst(/^(\d+\.)(\d+).+?(-SNAPSHOT)?$/, '$1$2$3') \
-   .replaceFirst(/-SNAPSHOT/, ".00${getDate()}")
+// Get the SSC plugin version based on current SCM version.
+// Due to SSC plugin version length restrictions, we cannot 
+// use the full date/time as part of the version number for
+// snapshot versions. As such, we use the number of hours 
+// since Epoch.
+def getPluginVersion() {
+    def time = System.currentTimeMillis().intdiv(1000)
+    def hours = time.intdiv(3600)
+    return scm.version.version \
+        .replaceFirst(/^(\d+\.)(\d+).+?(-SNAPSHOT)?$/, '$1$2$3') \
+        .replaceFirst(/-SNAPSHOT/, ".${hours}")
+}
+
+// Get the project version; this is used for both the jar file
+// name and the version on Bintray. As Bintray version needs to 
+// be unique, we can't use getPluginVersion() defined above 
+// (since uploading multiple versions within a single hour would fail). 
+def getProjectVersion() {
+	return scm.version.version \
+        .replaceFirst(/^(\d+\.)(\d+).+?(-SNAPSHOT)?$/, '$1$2$3-release') \
+        .replaceFirst(/-SNAPSHOT-release/, ".${getDateTime()}")
+}
+
+// Project and plugin version based on SCM information
+version = getProjectVersion()
+def sscPluginVersion = getPluginVersion()
 
 repositories {
 	mavenLocal()
@@ -76,14 +96,14 @@ dependencies {
 jar {
     doFirst {
         // check if version matches requirements
-        //if (!version.matches(versionRegex)) {
-        //    throw new InvalidUserDataException("Plugin version '$version' does not match '$versionRegex'")
-        //}
+        if (!sscPluginVersion.matches(versionRegex)) {
+            throw new InvalidUserDataException("Plugin version '$sscPluginVersion' does not match '$versionRegex'")
+        }
     }
     // replace version placeholders in plugin.xml
     filesMatching('plugin.xml') {
         filter {
-            it.replaceAll('<!--VERSION-->.*?<!--/VERSION-->', version)
+            it.replaceAll('<!--VERSION-->.*?<!--/VERSION-->', sscPluginVersion)
         }
     }
     // include files from compileExport dependencies
