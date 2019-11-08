@@ -46,7 +46,7 @@ def getPluginVersion() {
 def getProjectVersion() {
 	return scm.version.version \
         .replaceFirst(/^(\d+\.)(\d+).+?(-SNAPSHOT)?$/, '$1$2$3-release') \
-        .replaceFirst(/-SNAPSHOT-release/, ".${getDateTime()}")
+        .replaceFirst(/-SNAPSHOT-release/, "-beta-${getDateTime()}")
 }
 
 // Project and plugin version based on SCM information
