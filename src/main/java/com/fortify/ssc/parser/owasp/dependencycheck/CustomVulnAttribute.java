@@ -14,7 +14,10 @@ package com.fortify.ssc.parser.owasp.dependencycheck;
  */
 
 public enum CustomVulnAttribute implements com.fortify.plugin.spi.VulnerabilityAttribute {
-
+	fileName(AttrType.STRING),
+	source(AttrType.STRING),
+	name(AttrType.STRING),
+	cveUrl(AttrType.STRING),
 	notes(AttrType.STRING),
 	cvssScore(AttrType.DECIMAL),
 	cvssAccessVector(AttrType.STRING),

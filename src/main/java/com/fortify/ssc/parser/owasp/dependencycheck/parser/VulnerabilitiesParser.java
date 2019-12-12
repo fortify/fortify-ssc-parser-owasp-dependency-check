@@ -58,7 +58,12 @@ public class VulnerabilitiesParser {
 		vb.setKingdom(FortifyKingdom.ENVIRONMENT.getKingdomName());
 		vb.setAnalyzer(FortifyAnalyser.CONFIGURATION.getAnalyserName());
 		vb.setCategory("Insecure Deployment");
-		vb.setSubCategory(vulnerability.getName());
+		vb.setSubCategory("Vulnerable Dependency");
+		
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.fileName, dependency.getFileName());
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.source, vulnerability.getSource());
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.name, vulnerability.getName());
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.cveUrl, "https://nvd.nist.gov/vuln/detail/"+vulnerability.getName());
 		
 		// Set mandatory values to JavaDoc-recommended values
 		vb.setAccuracy(5.0f);

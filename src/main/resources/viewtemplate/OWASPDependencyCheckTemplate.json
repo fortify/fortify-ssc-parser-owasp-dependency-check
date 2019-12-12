@@ -2,30 +2,29 @@
 	[
 		{
 			"type": "template",
-			"title": "Description",
-			"key": "brief",
-			"templateId": "SIMPLE",
-			"dataType": "string"
-		}
-	],
-	[
-		{
-			"type": "fieldset",
-			"htmlClass": "container-spacer-bottom",
+			"title": "Details",
+			"templateId": "TITLEBOX",
 			"items": [
 				{
 					"type": "template",
 					"title": "File name",
-					"key": "fullFileName",
+					"key": "customAttributes.fileName",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
-					"title": "Impact",
-					"key": "impact",
+					"title": "Vulnerability",
+					"key": "customAttributes.name",
 					"templateId": "SIMPLE",
-					"dataType": "float"
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Source",
+					"key": "customAttributes.source",
+					"templateId": "SIMPLE",
+					"dataType": "string"
 				},
 				{
 					"type": "template",
@@ -36,18 +35,32 @@
 				},
 				{
 					"type": "template",
-					"title": "CWE's",
+					"title": "CWE",
 					"key": "customAttributes.cwes",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "CVE URL",
+					"key": "customAttributes.cveUrl",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				}
 			]
+		},
+		{
+			"type": "template",
+			"title": "Description",
+			"key": "brief",
+			"templateId": "COLLAPSE",
+			"dataType": "string"
 		}
 	],
 	[
 		{
 			"type": "template",
-			"title": "CVSS Information",
+			"title": "CVSS 2.0",
 			"templateId": "TITLEBOX",
 			"items": [
 				{
@@ -70,31 +83,24 @@
 					"key": "customAttributes.cvssAccessComplexity",
 					"templateId": "SIMPLE",
 					"dataType": "string"
-				}
-			]
-		},
-		{
-			"type": "template",
-			"title": "CVSS IMPACT (CIA)",
-			"templateId": "TITLEBOX",
-			"items": [
+				},
 				{
 					"type": "template",
-					"title": "Confidentiality",
+					"title": "Confidentiality Impact",
 					"key": "customAttributes.cvssConfidentialImpact",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
-					"title": "Integrity",
+					"title": "Integrity Impact",
 					"key": "customAttributes.cvssIntegrityImpact",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
-					"title": "Availability",
+					"title": "Availability Impact",
 					"key": "customAttributes.cvssAvailabilityImpact",
 					"templateId": "SIMPLE",
 					"dataType": "string"
