@@ -28,14 +28,14 @@ def downloadContainerName = getProjectVersionAsBetaOrRelease(false)
 def sscPluginVersion = getProjectVersionAsPlainVersionNumber()
 
 repositories {
-	mavenLocal()
+	mavenCentral()
     // repository with fortify artifacts
     maven { url "http://dl.bintray.com/fortify/maven-public" }
     // repository with fortify-ps releases
+    mavenLocal()
     maven { url "https://dl.bintray.com/fortify-ps/maven" }
     // repository with fortify-ps snapshots
     maven { url "https://oss.jfrog.org/artifactory/oss-snapshot-local" }
-    mavenCentral()
 }
 
 configurations {
@@ -111,11 +111,47 @@ bintray {
 }
 
 task packageLicenseReport(type: Zip) {
+	dependsOn generateLicenseReport
 	archiveFileName = "${rootProject.name}-${project.version}-licenseReport.zip"
 	destinationDirectory = file("$buildDir/dist")
 	
 	from licenseReport.outputDir
 }
-generateLicenseReport.finalizedBy packageLicenseReport
+
+task downloadDependencySources {
+    inputs.files configurations.compileExport
+    outputs.dir "${buildDir}/dependencySources"
+    doLast {
+        def componentIds = configurations.runtime.incoming.resolutionResult.allDependencies.collect { it.selected.id }
+        ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
+            .forComponents(componentIds)
+            .withArtifacts(JvmLibrary, SourcesArtifact)
+            .execute()
+        def sourceArtifacts = []
+        result.resolvedComponents.each { ComponentArtifactsResult component ->
+            Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
+            println "Found ${sources.size()} sources for ${component.id}"
+            sources.each { ArtifactResult ar ->
+                if (ar instanceof ResolvedArtifactResult) {
+                    sourceArtifacts << ar.file
+                }
+            }
+        }
+
+        copy {
+            from configurations.runtime
+            from sourceArtifacts
+            into "${buildDir}/dependencySources"
+        }
+    }
+}
+
+task packageDependencySources(type: Zip) {
+	dependsOn downloadDependencySources
+	archiveFileName = "${rootProject.name}-${project.version}-dependencySources.zip"
+	destinationDirectory = file("$buildDir/dist")
+	
+	from "${buildDir}/dependencySources"
+}
 
 
