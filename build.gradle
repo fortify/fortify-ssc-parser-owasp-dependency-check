@@ -109,7 +109,7 @@ bintray {
        into '.'
     }
 }
-bintrayUpload.dependsOn 'build', 'packageLicenseReport', 'packageDependencySources'
+_bintrayRecordingCopy.dependsOn 'build', 'packageLicenseReport', 'packageDependencySources'
 
 task packageLicenseReport(type: Zip) {
 	dependsOn 'generateLicenseReport'
