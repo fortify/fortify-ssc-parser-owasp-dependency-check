@@ -18,7 +18,7 @@ ext {
 
 // Project and plugin version based on SCM information
 version = getProjectVersionAsBetaOrRelease(true)
-def downloadContainer = getProjectVersionAsBetaOrRelease(false)
+def downloadContainerName = getProjectVersionAsBetaOrRelease(false)
 def sscPluginVersion = getProjectVersionAsPlainVersionNumber()
 
 repositories {
@@ -89,7 +89,8 @@ bintray {
         vcsUrl = 'https://github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check.git'
         userOrg = 'fortify-ps'
         version {
-			name = downloadContainer
+			name = downloadContainerName
+			vcsTag = downloadContainerName
 		}
     }
     filesSpec {
