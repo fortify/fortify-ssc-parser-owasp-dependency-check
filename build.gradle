@@ -2,6 +2,7 @@ plugins {
   id "io.freefair.lombok" version "4.1.2"
   id "com.jfrog.bintray" version "1.8.4"
   id 'org.ajoberstar.grgit' version "4.0.0"
+  id 'com.github.jk1.dependency-license-report' version '1.12'
 }
 
 apply from: "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/master/version-helper.gradle"
@@ -14,6 +15,11 @@ sourceCompatibility = 1.8
 ext {
     versionRegex = '(\\d+)(\\.\\d+)*'
     jacksonVersion = "2.8.4"
+}
+
+licenseReport {
+    configurations = ['compileExport']
+    excludeOwnGroup = true
 }
 
 // Project and plugin version based on SCM information
@@ -97,7 +103,19 @@ bintray {
        from("build/libs") {
           include "*.jar"
        }
+       from("build/dist") {
+          include "*.zip"
+       }
        into '.'
     }
 }
+
+task packageLicenseReport(type: Zip) {
+	archiveFileName = "${rootProject.name}-${project.version}-licenseReport.zip"
+	destinationDirectory = file("$buildDir/dist")
+	
+	from licenseReport.outputDir
+}
+generateLicenseReport.finalizedBy packageLicenseReport
+
 
