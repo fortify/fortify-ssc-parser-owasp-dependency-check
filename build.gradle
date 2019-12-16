@@ -109,9 +109,10 @@ bintray {
        into '.'
     }
 }
+bintrayUpload.dependsOn 'build', 'packageLicenseReport', 'packageDependencySources'
 
 task packageLicenseReport(type: Zip) {
-	dependsOn generateLicenseReport
+	dependsOn 'generateLicenseReport'
 	archiveFileName = "${rootProject.name}-${project.version}-licenseReport.zip"
 	destinationDirectory = file("$buildDir/dist")
 	
@@ -147,7 +148,7 @@ task downloadDependencySources {
 }
 
 task packageDependencySources(type: Zip) {
-	dependsOn downloadDependencySources
+	dependsOn 'downloadDependencySources'
 	archiveFileName = "${rootProject.name}-${project.version}-dependencySources.zip"
 	destinationDirectory = file("$buildDir/dist")
 	
