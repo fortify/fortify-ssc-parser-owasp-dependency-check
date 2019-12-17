@@ -5,154 +5,50 @@ plugins {
   id 'com.github.jk1.dependency-license-report' version '1.12'
 }
 
-apply from: "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/master/version-helper.gradle"
-
 group 'com.fortify.ssc.parser.owasp.dependencycheck'
 
-apply plugin: 'java'
-sourceCompatibility = 1.8
-
 ext {
-    versionRegex = '(\\d+)(\\.\\d+)*'
-    jacksonVersion = "2.8.4"
+	gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/master"
 }
 
-licenseReport {
-    configurations = ['compileExport']
-    excludeOwnGroup = true
-}
+apply from: "${gradleHelpersLocation}/repo-helper.gradle"
+apply from: "${gradleHelpersLocation}/junit-helper.gradle"
+apply from: "${gradleHelpersLocation}/version-helper.gradle"
 
 // Project and plugin version based on SCM information
 version = getProjectVersionAsBetaOrRelease(true)
-def downloadContainerName = getProjectVersionAsBetaOrRelease(false)
-def sscPluginVersion = getProjectVersionAsPlainVersionNumber()
-
-repositories {
-	mavenCentral()
-    // repository with fortify artifacts
-    maven { url "http://dl.bintray.com/fortify/maven-public" }
-    // repository with fortify-ps releases
-    mavenLocal()
-    maven { url "https://dl.bintray.com/fortify-ps/maven" }
-    // repository with fortify-ps snapshots
-    maven { url "https://oss.jfrog.org/artifactory/oss-snapshot-local" }
+ext {
+	sscParserPluginVersion = getProjectVersionAsPlainVersionNumber()
+	bintrayDownloadContainerName = getProjectVersionAsBetaOrRelease(false)
+	projectLicense = 'MIT'
 }
 
-configurations {
-    compileExport
-    compile.extendsFrom (compileExport)
-}
+apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
+apply from: "${gradleHelpersLocation}/dependency-sources-licenses-helper.gradle"
+apply from: "${gradleHelpersLocation}/bintray-binaries-helper.gradle"
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
 
 configurations.all {
     // Don't cache modules that may change (i.e. snapshots)
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
-test {
-    useJUnitPlatform()
-}
-
 dependencies {
-    // dependencies provided by plugin runtime
-    compile 'com.fortify.plugin:plugin-api:1.0.1'
-    compile 'org.slf4j:slf4j-api:1.7.21'
-
     compileExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util', version:'1.1.0-SNAPSHOT', changing: true) { transitive = true }
-    
-    //testImplementation 'org.junit.platform:junit-jupiter-api:5.3.1'
-    
-    testImplementation(group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1')
-    testImplementation(group: 'org.junit.platform', name: 'junit-platform-launcher', version: "1.1.0")
-    testRuntimeOnly(group: 'org.junit.jupiter', name:'junit-jupiter-engine', version: '5.3.1')
-    testRuntimeOnly(group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1')
-}
-
-jar {
-    doFirst {
-        // check if version matches requirements
-        if (!sscPluginVersion.matches(versionRegex)) {
-            throw new InvalidUserDataException("Plugin version '$sscPluginVersion' does not match '$versionRegex'")
-        }
-    }
-    // replace version placeholders in plugin.xml
-    filesMatching('plugin.xml') {
-        filter {
-            it.replaceAll('<!--VERSION-->.*?<!--/VERSION-->', sscPluginVersion)
-        }
-    }
-    // include files from compileExport dependencies
-    from { configurations.compileExport.collect { it.isDirectory() ? it : zipTree(it).matching { exclude 'META-INF/*' } } }
 }
 
 bintray {
-    user = System.getenv('BINTRAY_USER')
-    key = System.getenv('BINTRAY_KEY')
-    publish = true
-    pkg {
-        repo = 'binaries'
-        name = 'fortify-ssc-parser-owasp-dependency-check'
-        licenses = ['MIT']
-        vcsUrl = 'https://github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check.git'
-        userOrg = 'fortify-ps'
-        version {
-			name = downloadContainerName
-			vcsTag = downloadContainerName
-		}
-    }
     filesSpec {
-       from("build/libs") {
+       from("build/libs") { // Plugin jar
           include "*.jar"
        }
-       from("build/dist") {
+       from("build/dist") { // Dependency sources and licenses
           include "*.zip"
        }
        into '.'
     }
 }
-_bintrayRecordingCopy.dependsOn 'build', 'packageLicenseReport', 'packageDependencySources'
-
-task packageLicenseReport(type: Zip) {
-	dependsOn 'generateLicenseReport'
-	archiveFileName = "${rootProject.name}-${project.version}-licenseReport.zip"
-	destinationDirectory = file("$buildDir/dist")
-	
-	from licenseReport.outputDir
-}
-
-task downloadDependencySources {
-    inputs.files configurations.compileExport
-    outputs.dir "${buildDir}/dependencySources"
-    doLast {
-        def componentIds = configurations.runtime.incoming.resolutionResult.allDependencies.collect { it.selected.id }
-        ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
-            .forComponents(componentIds)
-            .withArtifacts(JvmLibrary, SourcesArtifact)
-            .execute()
-        def sourceArtifacts = []
-        result.resolvedComponents.each { ComponentArtifactsResult component ->
-            Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
-            println "Found ${sources.size()} sources for ${component.id}"
-            sources.each { ArtifactResult ar ->
-                if (ar instanceof ResolvedArtifactResult) {
-                    sourceArtifacts << ar.file
-                }
-            }
-        }
-
-        copy {
-            from configurations.runtime
-            from sourceArtifacts
-            into "${buildDir}/dependencySources"
-        }
-    }
-}
-
-task packageDependencySources(type: Zip) {
-	dependsOn 'downloadDependencySources'
-	archiveFileName = "${rootProject.name}-${project.version}-dependencySources.zip"
-	destinationDirectory = file("$buildDir/dist")
-	
-	from "${buildDir}/dependencySources"
-}
-
+_bintrayRecordingCopy.dependsOn 'build', 'packageDependencySourcesAndLicenses'
 
