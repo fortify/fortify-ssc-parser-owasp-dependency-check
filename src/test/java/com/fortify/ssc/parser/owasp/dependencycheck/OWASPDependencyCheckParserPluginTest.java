@@ -43,28 +43,35 @@ import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
 
 class OWASPDependencyCheckParserPluginTest {
-	private final ScanData scanData = new ScanData() {
-		
-		@Override
-		public String getSessionId() {
-			return UUID.randomUUID().toString();
-		}
-		
-		@Override
-		public List<ScanEntry> getScanEntries() {
-			return null;
-		}
-		
-		@Override
-		public InputStream getInputStream(Predicate<String> matcher) throws IOException {
-			return ClassLoader.getSystemResourceAsStream("dependency-check-report.json");
-		}
-		
-		@Override
-		public InputStream getInputStream(ScanEntry scanEntry) throws IOException {
-			return ClassLoader.getSystemResourceAsStream("dependency-check-report.json");
-		}
+	private static final String[] SAMPLE_FILES = {
+			"dependency-check-report-java.json", 
+			"dependency-check-report-php.json",
 	};
+	
+	private final ScanData getScanData(final String fileName) {
+		return new ScanData() {
+		
+			@Override
+			public String getSessionId() {
+				return UUID.randomUUID().toString();
+			}
+			
+			@Override
+			public List<ScanEntry> getScanEntries() {
+				return null;
+			}
+			
+			@Override
+			public InputStream getInputStream(Predicate<String> matcher) throws IOException {
+				return ClassLoader.getSystemResourceAsStream(fileName);
+			}
+			
+			@Override
+			public InputStream getInputStream(ScanEntry scanEntry) throws IOException {
+				return ClassLoader.getSystemResourceAsStream(fileName);
+			}
+		};
+	}
 	
 	private final ScanBuilder scanBuilder = (ScanBuilder) Proxy.newProxyInstance(
 			OWASPDependencyCheckParserPluginTest.class.getClassLoader(), 
@@ -97,14 +104,20 @@ class OWASPDependencyCheckParserPluginTest {
 	
 	@Test
 	void testParseScan() throws Exception {
-		new OWASPDependencyCheckParserPlugin().parseScan(scanData, scanBuilder);
-		// TODO Check actual output
+		for ( String file : SAMPLE_FILES ) {
+			System.err.println("\n\n---- "+file+" - parseScan");
+			new OWASPDependencyCheckParserPlugin().parseScan(getScanData(file), scanBuilder);
+			// TODO Check actual output
+		}
 	}
 	
 	@Test
 	void testParseVulnerabilities() throws Exception {
-		new OWASPDependencyCheckParserPlugin().parseVulnerabilities(scanData, vulnerabilityHandler);
-		// TODO Check actual output
+		for ( String file : SAMPLE_FILES ) {
+			System.err.println("\n\n---- "+file+" - parseVulnerabilities");
+			new OWASPDependencyCheckParserPlugin().parseVulnerabilities(getScanData(file), vulnerabilityHandler);
+			// TODO Check actual output
+		}
 	}
 
 }
