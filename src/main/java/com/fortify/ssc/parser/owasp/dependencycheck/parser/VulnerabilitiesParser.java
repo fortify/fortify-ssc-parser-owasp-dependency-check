@@ -17,10 +17,11 @@ import com.fortify.ssc.parser.owasp.dependencycheck.CustomVulnAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv2;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
-import com.fortify.ssc.parser.owasp.dependencycheck.parser.util.Constants;
+import com.fortify.util.ssc.parser.EngineTypeHelper;
 import com.fortify.util.ssc.parser.ScanDataStreamingJsonParser;
 
 public class VulnerabilitiesParser {
+	private static final String ENGINE_TYPE = EngineTypeHelper.getEngineType();
 	private final ScanData scanData;
 	private final VulnerabilityHandler vulnerabilityHandler;
 
@@ -54,7 +55,7 @@ public class VulnerabilitiesParser {
     	String fileName = dependency.getFilePathOrName();
 		String uniqueId = DigestUtils.sha256Hex(dependency.getSha256()+vulnerability.getName());
 		StaticVulnerabilityBuilder vb = vulnerabilityHandler.startStaticVulnerability(uniqueId);
-		vb.setEngineType(Constants.ENGINE_TYPE);
+		vb.setEngineType(ENGINE_TYPE);
 		vb.setKingdom(FortifyKingdom.ENVIRONMENT.getKingdomName());
 		vb.setAnalyzer(FortifyAnalyser.CONFIGURATION.getAnalyserName());
 		vb.setCategory("Insecure Deployment");
