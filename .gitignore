@@ -13,3 +13,4 @@ rebel.xml
 .settings/
 bin/
 lombok.config
+*.fpr
