@@ -37,7 +37,7 @@ configurations.all {
 }
 
 dependencies {
-    compileExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util', version:'1.1.0-SNAPSHOT', changing: true) { transitive = true }
+    compileExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util', version:'1.1-SNAPSHOT', changing: true) { transitive = true }
 }
 
 bintray {
