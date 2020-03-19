@@ -10,8 +10,8 @@ This Fortify SSC parser plugin allows for importing scan results from OWASP Depe
 * **Binaries**: https://bintray.com/beta/#/fortify-ps/binaries/fortify-ssc-parser-owasp-dependency-check?tab=files  
   Sort by `Updated` column to find latest
 * **Sample inputs**: 
-  * <src/test/resources/dependency-check-report-java.json>
-  * <src/test/resources/dependency-check-report-php.json>
+  * [src/test/resources/dependency-check-report-java.json](src/test/resources/dependency-check-report-java.json)
+  * [src/test/resources/dependency-check-report-php.json](src/test/resources/dependency-check-report-php.json)
 * **OWASP Dependency Check resources**:
   * https://owasp.org/www-project-dependency-check/
 
