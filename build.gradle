@@ -20,6 +20,8 @@ apply from: "${gradleHelpersLocation}/fortify-helper.gradle"
 version = getProjectVersionAsBetaOrRelease(true)
 ext {
 	sscParserPluginVersion = getProjectVersionAsPlainVersionNumber()
+	betaOrReleaseLabel = getBetaOrReleaseLabel()
+	bintrayPkgName = "${rootProject.name}-${betaOrReleaseLabel}"
 	bintrayDownloadContainerName = getProjectVersionAsBetaOrRelease(false)
 	projectLicense = 'MIT'
 }

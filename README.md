@@ -4,14 +4,13 @@ This Fortify SSC parser plugin allows for importing scan results from OWASP Depe
 
 ### Related Links
 
-* **Branches**: https://github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check/branches  
-  Current development is usually done on latest snapshot branch, which may not be the default branch
+* **Downloads**:  
+  _Beta versions may be unstable or non-functional. The `*-licenseReport.zip` and `*-dependencySources.zip` files are for informational purposes only and do not need to be downloaded._
+  * **Release versions**: https://bintray.com/package/files/fortify-ps/binaries/fortify-ssc-parser-owasp-dependency-check-release?order=desc&sort=fileLastModified&basePath=&tab=files  
+  * **Beta versions**: https://bintray.com/package/files/fortify-ps/binaries/fortify-ssc-parser-owasp-dependency-check-beta?order=desc&sort=fileLastModified&basePath=&tab=files
+  * **Sample input files**: [src/test/resources](src/test/resources)
 * **Automated builds**: https://travis-ci.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check
-* **Binaries**: https://bintray.com/beta/#/fortify-ps/binaries/fortify-ssc-parser-owasp-dependency-check?tab=files  
-  Sort by `Updated` column to find latest
-* **Sample inputs**: [src/test/resources](src/test/resources)
-* **OWASP Dependency Check resources**:
-  * https://owasp.org/www-project-dependency-check/
+* **OWASP Dependency Check website**: https://owasp.org/www-project-dependency-check/
 
 
 ## Usage
