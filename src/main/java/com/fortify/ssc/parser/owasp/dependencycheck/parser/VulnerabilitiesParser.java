@@ -31,8 +31,7 @@ public class VulnerabilitiesParser {
 	}
     
     /**
-	 * Main method to commence parsing the SARIF document provided by the
-	 * configured {@link ScanData}.
+	 * Main method to commence parsing the input provided by the configured {@link ScanData}.
 	 * @throws ScanParsingException
 	 * @throws IOException
 	 */
@@ -52,9 +51,7 @@ public class VulnerabilitiesParser {
     }
     
     private final void buildVulnerability(Dependency dependency, Vulnerability vulnerability) {
-    	String fileName = dependency.getFilePathOrName();
-		String uniqueId = DigestUtils.sha256Hex(dependency.getSha256()+vulnerability.getName());
-		StaticVulnerabilityBuilder vb = vulnerabilityHandler.startStaticVulnerability(uniqueId);
+		StaticVulnerabilityBuilder vb = vulnerabilityHandler.startStaticVulnerability(getInstanceId(dependency, vulnerability));
 		vb.setEngineType(ENGINE_TYPE);
 		vb.setKingdom(FortifyKingdom.ENVIRONMENT.getKingdomName());
 		vb.setAnalyzer(FortifyAnalyser.CONFIGURATION.getAnalyserName());
@@ -71,7 +68,7 @@ public class VulnerabilitiesParser {
 		vb.setConfidence(2.5f);
 		vb.setLikelihood(2.5f);
 		
-		vb.setFileName(fileName);
+		vb.setFileName(dependency.getFilePathOrName());
 		vb.setVulnerabilityAbstract(vulnerability.getDescription());
 		
 		try {
@@ -117,4 +114,8 @@ public class VulnerabilitiesParser {
 		
 		vb.completeVulnerability();
     }
+
+	private final String getInstanceId(Dependency dependency, Vulnerability vulnerability) {
+		return DigestUtils.sha256Hex(dependency.getSha256()+vulnerability.getName());
+	}
 }
