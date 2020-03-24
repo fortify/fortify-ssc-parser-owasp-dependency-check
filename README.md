@@ -97,6 +97,7 @@ the main project directory.
 * Build: (plugin binary will be stored in `build/libs`)
   * `./gradlew clean build`: Clean and build the project
   * `./gradlew build`: Build the project without cleaning
+  * `./gradlew dist`: Build distribution zip
 * Version management:
   * `./gradlew printProjectVersion`: Print the current version
   * `./gradlew startSnapshotBranch -PnextVersion=2.0`: Start a new snapshot branch for an upcoming `2.0` version
