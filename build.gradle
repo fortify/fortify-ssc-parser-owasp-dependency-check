@@ -49,6 +49,9 @@ task dist(type: Zip) {
 	from("${libsDir}") {
 		include "${rootProject.name}-${project.version}.jar"
 	}
+	from("${projectDir}/src/test/resources") {
+		into 'sampleData'
+	}
 	from("${projectDir}") {
 		include "LICENSE.TXT"
 		include "README.md"
