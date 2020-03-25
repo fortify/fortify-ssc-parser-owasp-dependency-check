@@ -13,4 +13,6 @@ rebel.xml
 .settings/
 bin/
 lombok.config
+.classpath
+.project
 *.fpr
