@@ -1,0 +1,226 @@
+{
+	"reportSchema": "1.1",
+	"scanInfo": {
+		"engineVersion": "5.2.4",
+		"dataSource": [
+			{
+				"name": "NVD CVE Checked",
+				"timestamp": "2019-12-16T13:37:56"
+			},
+			{
+				"name": "NVD CVE Modified",
+				"timestamp": "2019-12-16T12:05:52"
+			},
+			{
+				"name": "VersionCheckOn",
+				"timestamp": "2019-12-11T14:17:35"
+			}
+		]
+	},
+	"projectInfo": {
+		"name": "sample",
+		"reportDate": "2019-12-16T16:45:13.975Z",
+		"credits": {
+			"NVD": "This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov",
+			"NPM": "This report may contain data retrieved from the NPM Public Advisories: https://www.npmjs.com/advisories",
+			"RETIREJS": "This report may contain data retrieved from the RetireJS community: https://retirejs.github.io/retire.js/",
+			"OSSINDEX": "This report may contain data retrieved from the Sonatype OSS Index: https://ossindex.sonatype.org"
+		}
+	},
+	"dependencies": [
+		{
+			"isVirtual": true,
+			"fileName": "doctrine-migrations-bundle:2.0.0",
+			"filePath": "C:\\path\\to\\composer.lock:doctrine\/doctrine-migrations-bundle\/2.0.0",
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGHEST",
+						"source": "composer.lock",
+						"name": "vendor",
+						"value": "doctrine"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "composer.lock",
+						"name": "product",
+						"value": "doctrine-migrations-bundle"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "composer.lock",
+						"name": "version",
+						"value": "2.0.0"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:composer\/doctrine\/doctrine-migrations-bundle@2.0.0",
+					"confidence": "HIGHEST"
+				}
+			],
+			"vulnerabilityIds": [
+				{
+					"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:*:*:*:*:*:*:*",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/nvd.nist.gov\/vuln\/search\/results?form_type=Advanced&results_type=overview&search_type=all&cpe_vendor=cpe%3A%2F%3Adoctrine-project&cpe_product=cpe%3A%2F%3Adoctrine-project%3Adoctrine&cpe_version=cpe%3A%2F%3Adoctrine-project%3Adoctrine%3A2.0.0"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NVD",
+					"name": "CVE-2011-1522",
+					"severity": "HIGH",
+					"cvssv2": {
+						"score": 7.5,
+						"accessVector": "NETWORK",
+						"accessComplexity": "LOW",
+						"authenticationr": "NONE",
+						"confidentialImpact": "PARTIAL",
+						"integrityImpact": "PARTIAL",
+						"availabilityImpact": "PARTIAL",
+						"severity": "HIGH"
+					},
+					"cwes": [
+						"CWE-89"
+					],
+					"description": "Multiple SQL injection vulnerabilities in the Doctrine\\DBAL\\Platforms\\AbstractPlatform::modifyLimitQuery function in Doctrine 1.x before 1.2.4 and 2.x before 2.0.3 allow remote attackers to execute arbitrary SQL commands via the (1) limit or (2) offset field.",
+					"notes": "",
+					"references": [
+						{
+							"source": "CONFIRM",
+							"url": "http:\/\/bugs.debian.org\/cgi-bin\/bugreport.cgi?bug=622674",
+							"name": "http:\/\/bugs.debian.org\/cgi-bin\/bugreport.cgi?bug=622674"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=689396",
+							"name": "https:\/\/bugzilla.redhat.com\/show_bug.cgi?id=689396"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "http:\/\/www.doctrine-project.org\/blog\/doctrine-security-fix",
+							"name": "http:\/\/www.doctrine-project.org\/blog\/doctrine-security-fix"
+						},
+						{
+							"source": "BID",
+							"url": "http:\/\/www.securityfocus.com\/bid\/47034",
+							"name": "47034"
+						},
+						{
+							"source": "MLIST",
+							"url": "http:\/\/openwall.com\/lists\/oss-security\/2011\/03\/25\/2",
+							"name": "[oss-security] 20110325 CVE Request -- php-doctrine-Doctrine -- SQL injection flaw"
+						},
+						{
+							"source": "DEBIAN",
+							"url": "http:\/\/www.debian.org\/security\/2011\/dsa-2223",
+							"name": "DSA-2223"
+						},
+						{
+							"source": "MLIST",
+							"url": "http:\/\/openwall.com\/lists\/oss-security\/2011\/03\/28\/3",
+							"name": "[oss-security] 20110328 Re: CVE Request -- php-doctrine-Doctrine -- SQL injection flaw"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:alpha1:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine1.2.1:*:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine1.2.2:*:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:alpha2:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:beta4:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine1.2.0:*:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.2:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:beta3:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:rc1:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:alpha4:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:beta1:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.1:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine1.2.3:*:*:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:beta2:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:alpha3:*:*:*:*:*:*"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:doctrine-project:doctrine:2.0.0:rc2:*:*:*:*:*:*"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
