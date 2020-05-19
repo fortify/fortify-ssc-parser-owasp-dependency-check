@@ -36,4 +36,7 @@ public final class CVSSv2 {
 	@JsonProperty private String confidentialImpact;
 	@JsonProperty private String integrityImpact;
 	@JsonProperty private String availabilityImpact;
+	
+	// Available in JSON, but currently not used/shown by plugin
+	//@JsonProperty private String severity;
 }

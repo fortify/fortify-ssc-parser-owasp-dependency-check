@@ -14,7 +14,7 @@ import com.fortify.plugin.api.ScanParsingException;
 import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
 import com.fortify.ssc.parser.owasp.dependencycheck.CustomVulnAttribute;
-import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv2;
+import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv3;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
 import com.fortify.util.ssc.parser.EngineTypeHelper;
@@ -77,26 +77,27 @@ public class VulnerabilitiesParser {
 			vb.setPriority(Priority.Medium);
 		}
 		
-		CVSSv2 cvss = vulnerability.getCvssv2();
-		if ( cvss!=null ) {
-			vb.setImpact(cvss.getScore()==null 
+		CVSSv3 cvssv3 = vulnerability.getCvssAsv3();
+		if ( cvssv3!=null ) {
+			vb.setImpact(cvssv3.getBaseScore()==null 
 					? 2.5f // Default value if not defined in JSON
-					: (cvss.getScore()/10*5)); // CVVS2 score is 0-10, SSC impact is 0-5
+					: (cvssv3.getBaseScore()/10*5)); // CVVS3 score is 0-10, SSC impact is 0-5
 			
-			if ( StringUtils.equalsIgnoreCase("LOW", cvss.getAccessComplexity()) ) {
+			if ( StringUtils.equalsIgnoreCase("LOW", cvssv3.getAttackComplexity()) ) {
 				vb.setProbability(0f);
-			} else if ( StringUtils.equalsIgnoreCase("HIGH", cvss.getAccessComplexity()) ) {
+			} else if ( StringUtils.equalsIgnoreCase("HIGH", cvssv3.getAttackComplexity()) ) {
 				vb.setProbability(5.0f);
 			} else {
 				vb.setProbability(2.5f);
 			}
 			
-			vb.setDecimalCustomAttributeValue(CustomVulnAttribute.cvssScore, cvss.getScore()==null?null:new BigDecimal(cvss.getScore().toString()));
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAccessVector, cvss.getAccessVector());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAccessComplexity, cvss.getAccessComplexity());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssConfidentialImpact, cvss.getConfidentialImpact());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssIntegrityImpact, cvss.getIntegrityImpact());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAvailabilityImpact, cvss.getAvailabilityImpact());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssVersion, vulnerability.getCvssVersion());
+			vb.setDecimalCustomAttributeValue(CustomVulnAttribute.cvssBaseScore, cvssv3.getBaseScore()==null?null:new BigDecimal(cvssv3.getBaseScore().toString()));
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAttackVector, cvssv3.getAttackVector());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAttackComplexity, cvssv3.getAttackComplexity());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssConfidentialityImpact, cvssv3.getConfidentialityImpact());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssIntegrityImpact, cvssv3.getIntegrityImpact());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cvssAvailabilityImpact, cvssv3.getAvailabilityImpact());
 		}
 		
 		String[] cwes = vulnerability.getCwes();

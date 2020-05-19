@@ -60,34 +60,41 @@
 	[
 		{
 			"type": "template",
-			"title": "CVSS 2.0",
+			"title": "CVSS",
 			"templateId": "TITLEBOX",
 			"items": [
 				{
 					"type": "template",
+					"title": "CVSS Version",
+					"key": "customAttributes.cvssVersion",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
 					"title": "Score",
-					"key": "customAttributes.cvssScore",
+					"key": "customAttributes.cvssBaseScore",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
-					"title": "Access Vector",
-					"key": "customAttributes.cvssAccessVector",
+					"title": "Attack Vector",
+					"key": "customAttributes.cvssAttackVector",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
-					"title": "Access Complexity",
-					"key": "customAttributes.cvssAccessComplexity",
+					"title": "Attack Complexity",
+					"key": "customAttributes.cvssAttackComplexity",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
 					"title": "Confidentiality Impact",
-					"key": "customAttributes.cvssConfidentialImpact",
+					"key": "customAttributes.cvssConfidentialityImpact",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},

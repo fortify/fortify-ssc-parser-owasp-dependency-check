@@ -29,25 +29,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public final class Vulnerability {
-	@JsonProperty private String source;
-	@JsonProperty private String name;
-	@JsonProperty private String severity;
-	@JsonProperty private String description;
-	@JsonProperty private String notes;
-	@JsonProperty private String[] cwes;
-	@JsonProperty private CVSSv2 cvssv2;
-	@JsonProperty private CVSSv3 cvssv3;
+public final class CVSSv3 {
+	@JsonProperty private Float baseScore;
+	@JsonProperty private String attackVector;
+	@JsonProperty private String attackComplexity;
+	@JsonProperty private String confidentialityImpact;
+	@JsonProperty private String integrityImpact;
+	@JsonProperty private String availabilityImpact;
 	
-	public String getCvssVersion() {
-		return cvssv3!=null ? "3"
-				: cvssv2!=null ? "2"
-				: "None";
-	}
+	// Available in JSON, but currently not used/shown by plugin
+	//@JsonProperty private String privilegesRequired;
+	//@JsonProperty private String userInteraction;
+	//@JsonProperty private String scope;
+	//@JsonProperty private String baseSeverity;
 	
-	public CVSSv3 getCvssAsv3() {
-		return cvssv3!=null ? cvssv3
-				: cvssv2!=null ? CVSSv3.fromCvssv2(cvssv2)
-				: null;
+	public static final CVSSv3 fromCvssv2(CVSSv2 cvssv2) {
+		CVSSv3 result = new CVSSv3();
+		result.baseScore = cvssv2.getScore();
+		result.attackVector = cvssv2.getAccessVector();
+		result.attackComplexity = cvssv2.getAccessComplexity();
+		result.confidentialityImpact = cvssv2.getConfidentialImpact();
+		result.integrityImpact = cvssv2.getIntegrityImpact();
+		result.availabilityImpact = cvssv2.getAvailabilityImpact();
+		return result;
 	}
 }
