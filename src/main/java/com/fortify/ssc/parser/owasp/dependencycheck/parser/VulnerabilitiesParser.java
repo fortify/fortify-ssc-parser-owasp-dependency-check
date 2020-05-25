@@ -56,7 +56,7 @@ public class VulnerabilitiesParser {
 		vb.setKingdom(FortifyKingdom.ENVIRONMENT.getKingdomName());
 		vb.setAnalyzer(FortifyAnalyser.CONFIGURATION.getAnalyserName());
 		vb.setCategory("Insecure Deployment");
-		vb.setSubCategory("Vulnerable Dependency");
+		vb.setSubCategory("Unpatched Application");
 		
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.fileName, dependency.getFileName());
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.source, vulnerability.getSource());
