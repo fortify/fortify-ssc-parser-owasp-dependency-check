@@ -18,7 +18,7 @@ import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv3;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
 import com.fortify.util.ssc.parser.EngineTypeHelper;
-import com.fortify.util.ssc.parser.ScanDataStreamingJsonParser;
+import com.fortify.util.ssc.parser.json.ScanDataStreamingJsonParser;
 
 public class VulnerabilitiesParser {
 	private static final String ENGINE_TYPE = EngineTypeHelper.getEngineType();

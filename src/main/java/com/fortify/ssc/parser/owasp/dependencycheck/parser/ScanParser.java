@@ -5,8 +5,8 @@ import java.io.IOException;
 import com.fortify.plugin.api.ScanBuilder;
 import com.fortify.plugin.api.ScanData;
 import com.fortify.plugin.api.ScanParsingException;
-import com.fortify.util.jackson.DateConverter;
-import com.fortify.util.ssc.parser.ScanDataStreamingJsonParser;
+import com.fortify.util.jackson.IsoDateTimeConverter;
+import com.fortify.util.ssc.parser.json.ScanDataStreamingJsonParser;
 
 public class ScanParser {
 	private final ScanData scanData;
@@ -20,7 +20,7 @@ public class ScanParser {
 	public final void parse() throws ScanParsingException, IOException {
 		new ScanDataStreamingJsonParser()
 			.handler("/scanInfo/engineVersion", jp -> scanBuilder.setEngineVersion(jp.getValueAsString()))
-			.handler("/projectInfo/reportDate", jp -> scanBuilder.setScanDate(DateConverter.getInstance().convert(jp.getValueAsString())))
+			.handler("/projectInfo/reportDate", jp -> scanBuilder.setScanDate(IsoDateTimeConverter.getInstance().convert(jp.getValueAsString())))
 			.handler("/projectInfo/name", jp -> scanBuilder.setBuildId(jp.getValueAsString()))
 			.handler("/projectInfo/version", jp -> scanBuilder.setScanLabel(jp.getValueAsString()))
 			.handler("/dependencies", jp -> scanBuilder.setNumFiles(jp.countArrayEntries()))
