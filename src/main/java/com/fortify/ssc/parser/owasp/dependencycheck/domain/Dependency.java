@@ -34,10 +34,18 @@ import lombok.Getter;
 public final class Dependency {
 	@JsonProperty private String fileName;
 	@JsonProperty private String filePath;
+	@JsonProperty private String md5;
+	@JsonProperty private String sha1;
 	@JsonProperty private String sha256;
 	@JsonProperty private Vulnerability[] vulnerabilities;
 	
 	public final String getFilePathOrName() {
 		return StringUtils.isNotBlank(filePath)?filePath:fileName;
+	}
+	
+	public final String getDependencyIdentifier() {
+		return StringUtils.defaultIfBlank(sha256, 
+			StringUtils.defaultIfBlank(sha1, 
+				StringUtils.defaultIfBlank(md5, getFilePathOrName())));
 	}
 }

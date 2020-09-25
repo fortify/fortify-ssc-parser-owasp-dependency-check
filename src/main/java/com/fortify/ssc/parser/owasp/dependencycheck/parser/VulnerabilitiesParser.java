@@ -117,6 +117,6 @@ public class VulnerabilitiesParser {
     }
 
 	private final String getInstanceId(Dependency dependency, Vulnerability vulnerability) {
-		return DigestUtils.sha256Hex(dependency.getSha256()+vulnerability.getName());
+		return DigestUtils.sha256Hex(dependency.getDependencyIdentifier()+vulnerability.getName());
 	}
 }

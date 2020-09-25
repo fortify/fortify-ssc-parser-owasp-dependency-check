@@ -1,0 +1,1589 @@
+{
+	"reportSchema": "1.1",
+	"scanInfo": {
+		"engineVersion": "6.0.1",
+		"dataSource": [
+			{
+				"name": "NVD CVE Checked",
+				"timestamp": "2020-09-24T08:52:04"
+			},
+			{
+				"name": "NVD CVE Modified",
+				"timestamp": "2020-09-24T07:01:32"
+			},
+			{
+				"name": "VersionCheckOn",
+				"timestamp": "2020-09-15T17:20:45"
+			}
+		]
+	},
+	"projectInfo": {
+		"name": "test-dvna_master",
+		"reportDate": "2020-09-24T08:23:18.773Z",
+		"credits": {
+			"NVD": "This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov",
+			"NPM": "This report may contain data retrieved from the NPM Public Advisories: https://www.npmjs.com/advisories",
+			"RETIREJS": "This report may contain data retrieved from the RetireJS community: https://retirejs.github.io/retire.js/",
+			"OSSINDEX": "This report may contain data retrieved from the Sonatype OSS Index: https://ossindex.sonatype.org"
+		}
+	},
+	"dependencies": [
+		{
+			"isVirtual": false,
+			"fileName": "app.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\routes\\app.js",
+			"md5": "a759f5a3f4d40cae2b101a7c15025d00",
+			"sha1": "71b2d798c29f4c6684f5e3cebfd5791a168d5d27",
+			"sha256": "cccf34466457f3d4526c4f24df10620c0d72931c04429db6926a1460716a62bb",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "appHandler.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\appHandler.js",
+			"md5": "08c5c76a25abfd388451af31309173a5",
+			"sha1": "a104bda9bc75f53a62d9fa56741c78066dd8a05d",
+			"sha256": "ca373cab1762b91e80de86a061a928a647c1a6fe39ee650f6fcef1abd25a1d6f",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "authHandler.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\authHandler.js",
+			"md5": "6ba741effb92d3ac737ca300defa23e5",
+			"sha1": "b6d1ce02838610953be54d966ff678ee45bc06b8",
+			"sha256": "82d6a8fe0285c4118477b128d5330f75219e5900cf009062e96486ebf97a03ef",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": true,
+			"fileName": "bcrypt:1.0.3",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?bcrypt",
+			"projectReferences": [
+				"package-lock.json: transitive"
+			],
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "package.json",
+						"name": "name",
+						"value": "bcrypt"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "name",
+						"value": "bcrypt"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "version",
+						"value": "1.0.3"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:npm\/bcrypt@1.0.3",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:npm\/bcrypt@1.0.3"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NPM",
+					"name": "1553",
+					"unscored": "true",
+					"severity": "moderate",
+					"cwes": [],
+					"description": "In bcrypt (npm package) before version 5.0.0, data is truncated wrong when its length is greater than 255 bytes.",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 1553: Inadequate Encryption Strength",
+							"name": "- https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-7689\n- https:\/\/github.com\/kelektiv\/node.bcrypt.js#776\n- https:\/\/github.com\/kelektiv\/node.bcrypt.js#806\n- https:\/\/github.com\/kelektiv\/node.bcrypt.js#807\n- https:\/\/snyk.io\/vuln\/SNYK-JS-BCRYPT-572911"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:bcrypt:\\<5.0.0:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": false,
+			"fileName": "db.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\db.js",
+			"md5": "1d55fb76773dccdc9da82268c3dd9dc3",
+			"sha1": "2ccac218fc3a1d8c3fb69282c14b86f97378b0b7",
+			"sha256": "8f4444dda9f866dc76a28b4b407f6b7b7d9bbf261b420e800a30d0245d325101",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": true,
+			"fileName": "express-fileupload:0.4.0",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?express-fileupload",
+			"projectReferences": [
+				"package-lock.json: transitive"
+			],
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "package.json",
+						"name": "name",
+						"value": "express-fileupload"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "name",
+						"value": "express-fileupload"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "version",
+						"value": "0.4.0"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:npm\/express-fileupload@0.4.0",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:npm\/express-fileupload@0.4.0"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NPM",
+					"name": "1216",
+					"unscored": "true",
+					"severity": "low",
+					"cwes": [],
+					"description": "Versions of `express-fileupload` prior to 1.1.6-alpha.6 are vulnerable to Denial of Service. The package causes server responses to be delayed (up to 30s in internal testing) if the request contains a large `filename` of `.` characters.\n\n",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 1216: Denial of Service",
+							"name": ""
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:express-fileupload:\\<1.1.6-alpha.6\\|\\|\\<\\=1.1.3-alpha.2\\|\\|\\<\\=1.1.2-alpha.1\\|\\|\\<\\=1.1.1-alpha.3\\|\\|\\<\\=1.0.0-alpha.1:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')",
+					"severity": "HIGH",
+					"cvssv3": {
+						"baseScore": 7.5,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "N",
+						"userInteraction": "N",
+						"scope": "U",
+						"confidentialityImpact": "N",
+						"integrityImpact": "N",
+						"availabilityImpact": "H",
+						"baseSeverity": "HIGH"
+					},
+					"cwes": [
+						"CWE-400"
+					],
+					"description": "The software does not properly restrict the size or amount of resources that are requested or influenced by an actor, which can be used to consume more resources than intended.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/b5cc4326-6250-4a6d-ac4a-31954f0e8cf9?component-type=npm&component-name=express-fileupload&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:express-fileupload:0.4.0:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": false,
+			"fileName": "index.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\index.js",
+			"md5": "c40371ec24d351796efd9e36bf9a9808",
+			"sha1": "5830c1da1bf3441eca8d36ddefc0d798a72e565a",
+			"sha256": "6c8ff950841be7d2731e02c0e9e0a5e4c74213e00fc622e54847d7853151d1e4",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "jquery-3.2.1.min.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\public\\assets\\jquery-3.2.1.min.js",
+			"md5": "473957cfb255a781b42cb2af51d54a3b",
+			"sha1": "67bdacbd077ee59f411109fd119ee9f58db15a5f",
+			"sha256": "75b707d8761e2bfbd25fbd661f290a4f7fd11c48e1bf53a36dc6bd8a0034fa35",
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "file",
+						"name": "name",
+						"value": "jquery"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGH",
+						"source": "file",
+						"name": "name",
+						"value": "jquery"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGH",
+						"source": "file",
+						"name": "version",
+						"value": "3.2.1.min"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:javascript\/jquery@3.2.1.min",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:javascript\/jquery@3.2.1.min"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NVD",
+					"name": "CVE-2019-11358",
+					"severity": "MEDIUM",
+					"cvssv2": {
+						"score": 4.3,
+						"accessVector": "NETWORK",
+						"accessComplexity": "MEDIUM",
+						"authenticationr": "NONE",
+						"confidentialImpact": "NONE",
+						"integrityImpact": "PARTIAL",
+						"availabilityImpact": "NONE",
+						"severity": "MEDIUM",
+						"version": "2.0",
+						"exploitabilityScore": "8.6",
+						"impactScore": "2.9",
+						"userInteractionRequired": "true"
+					},
+					"cvssv3": {
+						"baseScore": 6.1,
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "REQUIRED",
+						"scope": "CHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"baseSeverity": "MEDIUM",
+						"exploitabilityScore": "2.8",
+						"impactScore": "2.7",
+						"version": "3.0"
+					},
+					"cwes": [
+						"CWE-79"
+					],
+					"description": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.",
+					"notes": "",
+					"references": [
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r7aac081cbddb6baa24b75e74abf0929bf309b176755a53e3ed810355@%3Cdev.flink.apache.org%3E",
+							"name": "[flink-dev] 20200513 [jira] [Created] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/github.com\/jquery\/jquery\/pull\/4333",
+							"name": "https:\/\/github.com\/jquery\/jquery\/pull\/4333"
+						},
+						{
+							"source": "MISC",
+							"url": "http:\/\/packetstormsecurity.com\/files\/156743\/OctoberCMS-Insecure-Dependencies.html",
+							"name": "http:\/\/packetstormsecurity.com\/files\/156743\/OctoberCMS-Insecure-Dependencies.html"
+						},
+						{
+							"source": "FULLDISC",
+							"url": "http:\/\/seclists.org\/fulldisclosure\/2019\/May\/11",
+							"name": "20190510 dotCMS v5.1.1 HTML Injection & XSS Vulnerability"
+						},
+						{
+							"source": "BUGTRAQ",
+							"url": "https:\/\/seclists.org\/bugtraq\/2019\/Jun\/12",
+							"name": "20190612 [SECURITY] [DSA 4460-1] mediawiki security update"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r7e8ebccb7c022e41295f6fdb7b971209b83702339f872ddd8cf8bf73@%3Cissues.flink.apache.org%3E",
+							"name": "[flink-issues] 20200518 [jira] [Updated] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/www.tenable.com\/security\/tns-2019-08",
+							"name": "https:\/\/www.tenable.com\/security\/tns-2019-08"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.debian.org\/debian-lts-announce\/2019\/05\/msg00029.html",
+							"name": "[debian-lts-announce] 20190520 [SECURITY] [DLA 1797-1] drupal7 security update"
+						},
+						{
+							"source": "FULLDISC",
+							"url": "http:\/\/seclists.org\/fulldisclosure\/2019\/May\/10",
+							"name": "20190510 dotCMS v5.1.1 Vulnerabilities"
+						},
+						{
+							"source": "N\/A",
+							"url": "https:\/\/www.oracle.com\/security-alerts\/cpuapr2020.html",
+							"name": "N\/A"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/backdropcms.org\/security\/backdrop-sa-core-2019-009",
+							"name": "https:\/\/backdropcms.org\/security\/backdrop-sa-core-2019-009"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.drupal.org\/sa-core-2019-006",
+							"name": "https:\/\/www.drupal.org\/sa-core-2019-006"
+						},
+						{
+							"source": "FULLDISC",
+							"url": "http:\/\/seclists.org\/fulldisclosure\/2019\/May\/13",
+							"name": "20190510 Re: dotCMS v5.1.1 HTML Injection & XSS Vulnerability"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+							"name": "[nifi-commits] 20191113 svn commit: r1869773 - \/nifi\/site\/trunk\/security.html"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r41b5bfe009c845f67d4f68948cc9419ac2d62e287804aafd72892b08@%3Cissues.flink.apache.org%3E",
+							"name": "[flink-issues] 20200518 [jira] [Assigned] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/snyk.io\/vuln\/SNYK-JS-JQUERY-174006",
+							"name": "https:\/\/snyk.io\/vuln\/SNYK-JS-JQUERY-174006"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/5IABSKTYZ5JUGL735UKGXL5YPRYOPUYI\/",
+							"name": "FEDORA-2019-eba8e44ee6"
+						},
+						{
+							"source": "REDHAT",
+							"url": "https:\/\/access.redhat.com\/errata\/RHBA-2019:1570",
+							"name": "RHBA-2019:1570"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.privacy-wise.com\/mitigating-cve-2019-11358-in-old-versions-of-jquery\/",
+							"name": "https:\/\/www.privacy-wise.com\/mitigating-cve-2019-11358-in-old-versions-of-jquery\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.debian.org\/debian-lts-announce\/2019\/05\/msg00006.html",
+							"name": "[debian-lts-announce] 20190506 [SECURITY] [DLA 1777-1] jquery security update"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/www.tenable.com\/security\/tns-2020-02",
+							"name": "https:\/\/www.tenable.com\/security\/tns-2020-02"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r2041a75d3fc09dec55adfd95d598b38d22715303f65c997c054844c9@%3Cissues.flink.apache.org%3E",
+							"name": "[flink-issues] 20200518 [jira] [Commented] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "MISC",
+							"url": "http:\/\/packetstormsecurity.com\/files\/153237\/RetireJS-CORS-Issue-Script-Execution.html",
+							"name": "http:\/\/packetstormsecurity.com\/files\/153237\/RetireJS-CORS-Issue-Script-Execution.html"
+						},
+						{
+							"source": "info",
+							"url": "https:\/\/blog.jquery.com\/2019\/04\/10\/jquery-3-4-0-released\/",
+							"name": "https:\/\/blog.jquery.com\/2019\/04\/10\/jquery-3-4-0-released\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+							"name": "[drill-dev] 20191017 Dependencies used by Drill contain known vulnerabilities"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r38f0d1aa3c923c22977fe7376508f030f22e22c1379fbb155bf29766@%3Cdev.syncope.apache.org%3E",
+							"name": "[syncope-dev] 20200423 Jquery version on 2.1.x\/2.0.x"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2019-08\/msg00025.html",
+							"name": "openSUSE-SU-2019:1872"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/6097cdbd6f0a337bedd9bb5cc441b2d525ff002a96531de367e4259f@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20190428 [GitHub] [airflow] XD-DENG commented on issue #5197: [AIRFLOW-XXX] Fix CVE-2019-11358"
+						},
+						{
+							"source": "info",
+							"url": "https:\/\/github.com\/jquery\/jquery\/commit\/753d591aea698e57d6db58c9f722cd0808619b1b",
+							"name": "https:\/\/github.com\/jquery\/jquery\/commit\/753d591aea698e57d6db58c9f722cd0808619b1b"
+						},
+						{
+							"source": "REDHAT",
+							"url": "https:\/\/access.redhat.com\/errata\/RHSA-2019:3024",
+							"name": "RHSA-2019:3024"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/5928aa293e39d248266472210c50f176cac1535220f2486e6a7fa844@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20190428 [GitHub] [airflow] XD-DENG merged pull request #5197: [AIRFLOW-XXX] Fix CVE-2019-11358"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2019-08\/msg00006.html",
+							"name": "openSUSE-SU-2019:1839"
+						},
+						{
+							"source": "REDHAT",
+							"url": "https:\/\/access.redhat.com\/errata\/RHSA-2019:1456",
+							"name": "RHSA-2019:1456"
+						},
+						{
+							"source": "BUGTRAQ",
+							"url": "https:\/\/seclists.org\/bugtraq\/2019\/May\/18",
+							"name": "20190509 dotCMS v5.1.1 Vulnerabilities"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+							"name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html",
+							"name": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html"
+						},
+						{
+							"source": "BID",
+							"url": "http:\/\/www.securityfocus.com\/bid\/108023",
+							"name": "108023"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/technetwork\/security-advisory\/cpujul2019-5072835.html",
+							"name": "https:\/\/www.oracle.com\/technetwork\/security-advisory\/cpujul2019-5072835.html"
+						},
+						{
+							"source": "DEBIAN",
+							"url": "https:\/\/www.debian.org\/security\/2019\/dsa-4460",
+							"name": "DSA-4460"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/KYH3OAGR2RTCHRA5NOKX2TES7SNQMWGO\/",
+							"name": "FEDORA-2019-7eaf0bbe7c"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r7d64895cc4dff84d0becfc572b20c0e4bf9bfa7b10c6f5f73e783734@%3Cdev.storm.apache.org%3E",
+							"name": "[storm-dev] 20200708 [GitHub] [storm] Crim opened a new pull request #3305: [STORM-3553] Upgrade jQuery from 1.11.1 to 3.5.1"
+						},
+						{
+							"source": "info",
+							"url": "https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2019-11358",
+							"name": "https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2019-11358"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/WZW27UCJ5CYFL4KFFFMYMIBNMIU2ALG5\/",
+							"name": "FEDORA-2019-f563e66380"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/security-alerts\/cpujan2020.html",
+							"name": "https:\/\/www.oracle.com\/security-alerts\/cpujan2020.html"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/RLXRX23725JL366CNZGJZ7AQQB7LHQ6F\/",
+							"name": "FEDORA-2019-2a0ce0c58c"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/blog.jquery.com\/2019\/04\/10\/jquery-3-4-0-released\/",
+							"name": "https:\/\/blog.jquery.com\/2019\/04\/10\/jquery-3-4-0-released\/"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/security.netapp.com\/advisory\/ntap-20190919-0001\/",
+							"name": "https:\/\/security.netapp.com\/advisory\/ntap-20190919-0001\/"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/4UOAZIFCSZ3ENEFOR5IXX6NFAD3HV7FA\/",
+							"name": "FEDORA-2019-1a3edd7e8a"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.debian.org\/debian-lts-announce\/2020\/02\/msg00024.html",
+							"name": "[debian-lts-announce] 20200224 [SECURITY] [DLA 2118-1] otrs2 security update"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/88fb0362fd40e5b605ea8149f63241537b8b6fb5bfa315391fc5cbb7@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20190428 [GitHub] [airflow] codecov-io commented on issue #5197: [AIRFLOW-XXX] Fix CVE-2019-11358"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/08720ef215ee7ab3386c05a1a90a7d1c852bf0706f176a7816bf65fc@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20190428 [GitHub] [airflow] feng-tao commented on issue #5197: [AIRFLOW-XXX] Fix CVE-2019-11358"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rac25da84ecdcd36f6de5ad0d255f4e967209bbbebddb285e231da37d@%3Cissues.flink.apache.org%3E",
+							"name": "[flink-issues] 20200513 [jira] [Created] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "REDHAT",
+							"url": "https:\/\/access.redhat.com\/errata\/RHSA-2019:2587",
+							"name": "RHSA-2019:2587"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/ba79cf1658741e9f146e4c59b50aee56656ea95d841d358d006c18b6@%3Ccommits.roller.apache.org%3E",
+							"name": "[roller-commits] 20190820 [jira] [Created] (ROL-2150) Fix Js security vulnerabilities detected using retire js"
+						},
+						{
+							"source": "MLIST",
+							"url": "http:\/\/www.openwall.com\/lists\/oss-security\/2019\/06\/03\/2",
+							"name": "[oss-security] 20190603 Django: CVE-2019-12308 AdminURLFieldWidget XSS (plus patched bundled jQuery for CVE-2019-11358)"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/technetwork\/security-advisory\/cpuoct2019-5072832.html",
+							"name": "https:\/\/www.oracle.com\/technetwork\/security-advisory\/cpuoct2019-5072832.html"
+						},
+						{
+							"source": "DEBIAN",
+							"url": "https:\/\/www.debian.org\/security\/2019\/dsa-4434",
+							"name": "DSA-4434"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+							"name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r2baacab6e0acb5a2092eb46ae04fd6c3e8277b4fd79b1ffb7f3254fa@%3Cissues.flink.apache.org%3E",
+							"name": "[flink-issues] 20200520 [jira] [Closed] (FLINK-17675) Resolve CVE-2019-11358 from jquery"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/b736d0784cf02f5a30fbb4c5902762a15ad6d47e17e2c5a17b7d6205@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20190428 [GitHub] [airflow] feng-tao opened a new pull request #5197: [AIRFLOW-XXX] Fix CVE-2019-11358"
+						},
+						{
+							"source": "REDHAT",
+							"url": "https:\/\/access.redhat.com\/errata\/RHSA-2019:3023",
+							"name": "RHSA-2019:3023"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/github.com\/jquery\/jquery\/commit\/753d591aea698e57d6db58c9f722cd0808619b1b",
+							"name": "https:\/\/github.com\/jquery\/jquery\/commit\/753d591aea698e57d6db58c9f722cd0808619b1b"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+							"name": "[nifi-commits] 20200123 svn commit: r1873083 - \/nifi\/site\/trunk\/security.html"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/www.synology.com\/security\/advisory\/Synology_SA_19_19",
+							"name": "https:\/\/www.synology.com\/security\/advisory\/Synology_SA_19_19"
+						},
+						{
+							"source": "BUGTRAQ",
+							"url": "https:\/\/seclists.org\/bugtraq\/2019\/Apr\/32",
+							"name": "20190421 [SECURITY] [DSA 4434-1] drupal7 security update"
+						},
+						{
+							"source": "MISC",
+							"url": "http:\/\/packetstormsecurity.com\/files\/152787\/dotCMS-5.1.1-Vulnerable-Dependencies.html",
+							"name": "http:\/\/packetstormsecurity.com\/files\/152787\/dotCMS-5.1.1-Vulnerable-Dependencies.html"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/QV3PKZC3PQCO3273HAT76PAQZFBEO4KP\/",
+							"name": "FEDORA-2019-a06dffab1c"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "1.12.0",
+								"versionEndExcluding": "1.12.6"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*",
+								"versionEndExcluding": "3.4.0"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "1.11.0",
+								"versionEndExcluding": "1.11.9"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "7.0",
+								"versionEndExcluding": "7.66"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "8.6.0",
+								"versionEndExcluding": "8.6.15"
+							}
+						},
+						{
+							"software": {
+								"id": "cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "8.5.0",
+								"versionEndExcluding": "8.5.15"
+							}
+						}
+					]
+				},
+				{
+					"source": "NVD",
+					"name": "CVE-2020-11022",
+					"severity": "MEDIUM",
+					"cvssv2": {
+						"score": 4.3,
+						"accessVector": "NETWORK",
+						"accessComplexity": "MEDIUM",
+						"authenticationr": "NONE",
+						"confidentialImpact": "NONE",
+						"integrityImpact": "PARTIAL",
+						"availabilityImpact": "NONE",
+						"severity": "MEDIUM",
+						"version": "2.0",
+						"exploitabilityScore": "8.6",
+						"impactScore": "2.9",
+						"userInteractionRequired": "true"
+					},
+					"cvssv3": {
+						"baseScore": 6.1,
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "REQUIRED",
+						"scope": "CHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"baseSeverity": "MEDIUM",
+						"exploitabilityScore": "2.8",
+						"impactScore": "2.7",
+						"version": "3.1"
+					},
+					"cwes": [
+						"CWE-79"
+					],
+					"description": "In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+					"notes": "",
+					"references": [
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/SFP4UK4EGP4AFH2MWYJ5A5Z4I7XVFQ6B\/",
+							"name": "FEDORA-2020-fbb94073a1"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html",
+							"name": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/jquery.com\/upgrade-guide\/3.5\/",
+							"name": "https:\/\/jquery.com\/upgrade-guide\/3.5\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rdf44341677cf7eec7e9aa96dcf3f37ed709544863d619cca8c36f133@%3Ccommits.airflow.apache.org%3E",
+							"name": "[airflow-commits] 20200820 [GitHub] [airflow] breser opened a new issue #10429: jquery dependency needs to be updated to 3.5.0 or newer"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/AVKYXLWCLZBV2N7M46KYK4LVA5OXWPBY\/",
+							"name": "FEDORA-2020-0b32a59b54"
+						},
+						{
+							"source": "GENTOO",
+							"url": "https:\/\/security.gentoo.org\/glsa\/202007-03",
+							"name": "GLSA-202007-03"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/QPN2L2XVQGUA2V5HNQJWHK3APSK3VN7K\/",
+							"name": "FEDORA-2020-36d2db5f51"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/github.com\/jquery\/jquery\/commit\/1d61fd9407e6fbe82fe55cb0b938307aa0791f77",
+							"name": "https:\/\/github.com\/jquery\/jquery\/commit\/1d61fd9407e6fbe82fe55cb0b938307aa0791f77"
+						},
+						{
+							"source": "DEBIAN",
+							"url": "https:\/\/www.debian.org\/security\/2020\/dsa-4693",
+							"name": "DSA-4693"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2020-07\/msg00085.html",
+							"name": "openSUSE-SU-2020:1106"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/",
+							"name": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/github.com\/jquery\/jquery\/security\/advisories\/GHSA-gxr4-xjj5-5px2",
+							"name": "https:\/\/github.com\/jquery\/jquery\/security\/advisories\/GHSA-gxr4-xjj5-5px2"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/security.netapp.com\/advisory\/ntap-20200511-0006\/",
+							"name": "https:\/\/security.netapp.com\/advisory\/ntap-20200511-0006\/"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/VOE7P7APPRQKD4FGNHBKJPDY6FFCOH3W\/",
+							"name": "FEDORA-2020-11be4b36d4"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2020-07\/msg00067.html",
+							"name": "openSUSE-SU-2020:1060"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/www.drupal.org\/sa-core-2020-002",
+							"name": "https:\/\/www.drupal.org\/sa-core-2020-002"
+						},
+						{
+							"source": "info",
+							"url": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/",
+							"name": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "1.2",
+								"versionEndExcluding": "3.5.0"
+							}
+						}
+					]
+				},
+				{
+					"source": "NVD",
+					"name": "CVE-2020-11023",
+					"severity": "MEDIUM",
+					"cvssv2": {
+						"score": 4.3,
+						"accessVector": "NETWORK",
+						"accessComplexity": "MEDIUM",
+						"authenticationr": "NONE",
+						"confidentialImpact": "NONE",
+						"integrityImpact": "PARTIAL",
+						"availabilityImpact": "NONE",
+						"severity": "MEDIUM",
+						"version": "2.0",
+						"exploitabilityScore": "8.6",
+						"impactScore": "2.9",
+						"userInteractionRequired": "true"
+					},
+					"cvssv3": {
+						"baseScore": 6.1,
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "REQUIRED",
+						"scope": "CHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"baseSeverity": "MEDIUM",
+						"exploitabilityScore": "2.8",
+						"impactScore": "2.7",
+						"version": "3.1"
+					},
+					"cwes": [
+						"CWE-79"
+					],
+					"description": "In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing <option> elements from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+					"notes": "",
+					"references": [
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rb25c3bc7418ae75cba07988dafe1b6912f76a9dd7d94757878320d61@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200911 [GitHub] [hive] rajkrrsingh opened a new pull request #1403: Hive 24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/radcb2aa874a79647789f3563fcbbceaf1045a029ee8806b59812a8ea@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200902 [jira] [Work started] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/ra3c9219fcb0b289e18e9ec5a5ebeaa5c17d6b79a201667675af6721c@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200813 [GitHub] [hive] rajkrrsingh opened a new pull request #1403: Hive 24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html",
+							"name": "https:\/\/www.oracle.com\/security-alerts\/cpujul2020.html"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/jquery.com\/upgrade-guide\/3.5\/",
+							"name": "https:\/\/jquery.com\/upgrade-guide\/3.5\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rab82dd040f302018c85bd07d33f5604113573514895ada523c3401d9@%3Ccommits.hive.apache.org%3E",
+							"name": "[hive-commits] 20200915 [hive] branch master updated: HIVE-24039 : Update jquery version to mitigate CVE-2020-11023 (#1403)"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r094f435595582f6b5b24b66fedf80543aa8b1d57a3688fbcc21f06ec@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200813 [jira] [Assigned] (HIVE-24039) update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/AVKYXLWCLZBV2N7M46KYK4LVA5OXWPBY\/",
+							"name": "FEDORA-2020-0b32a59b54"
+						},
+						{
+							"source": "GENTOO",
+							"url": "https:\/\/security.gentoo.org\/glsa\/202007-03",
+							"name": "GLSA-202007-03"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rb69b7d8217c1a6a2100247a5d06ce610836b31e3f5d73fc113ded8e7@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200902 [jira] [Comment Edited] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/QPN2L2XVQGUA2V5HNQJWHK3APSK3VN7K\/",
+							"name": "FEDORA-2020-36d2db5f51"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r4aadb98086ca72ed75391f54167522d91489a0d0ae25b12baa8fc7c5@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200904 [jira] [Assigned] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r6c4df3b33e625a44471009a172dabe6865faec8d8f21cac2303463b1@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200915 [jira] [Work logged] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "DEBIAN",
+							"url": "https:\/\/www.debian.org\/security\/2020\/dsa-4693",
+							"name": "DSA-4693"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/github.com\/jquery\/jquery\/security\/advisories\/GHSA-jpcq-cgw6-v4j6",
+							"name": "https:\/\/github.com\/jquery\/jquery\/security\/advisories\/GHSA-jpcq-cgw6-v4j6"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/security.netapp.com\/advisory\/ntap-20200511-0006\/",
+							"name": "https:\/\/security.netapp.com\/advisory\/ntap-20200511-0006\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r0593393ca1e97b1e7e098fe69d414d6bd0a467148e9138d07e86ebbb@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200915 [jira] [Updated] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r1fed19c860a0d470f2a3eded12795772c8651ff583ef951ddac4918c@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200915 [GitHub] [hive] kgyrtkirk merged pull request #1403: HIVE-24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2020-07\/msg00067.html",
+							"name": "openSUSE-SU-2020:1060"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/ra374bb0299b4aa3e04edde01ebc03ed6f90cf614dad40dd428ce8f72@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200911 [GitHub] [hive] rajkrrsingh closed pull request #1403: Hive 24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "CONFIRM",
+							"url": "https:\/\/www.drupal.org\/sa-core-2020-002",
+							"name": "https:\/\/www.drupal.org\/sa-core-2020-002"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rf1ba79e564fe7efc56aef7c986106f1cf67a3427d08e997e088e7a93@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200912 [GitHub] [hive] rajkrrsingh closed pull request #1403: Hive 24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "FEDORA",
+							"url": "https:\/\/lists.fedoraproject.org\/archives\/list\/package-announce@lists.fedoraproject.org\/message\/SFP4UK4EGP4AFH2MWYJ5A5Z4I7XVFQ6B\/",
+							"name": "FEDORA-2020-fbb94073a1"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/ra406b3adfcffcb5ce8707013bdb7c35e3ffc2776a8a99022f15274c6@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200915 [jira] [Resolved] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rf661a90a15da8da5922ba6127b3f5f8194d4ebec8855d60a0dd13248@%3Cdev.hive.apache.org%3E",
+							"name": "[hive-dev] 20200813 [jira] [Created] (HIVE-24039) update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r6e97b37963926f6059ecc1e417721608723a807a76af41d4e9dbed49@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200902 [jira] [Assigned] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "SUSE",
+							"url": "http:\/\/lists.opensuse.org\/opensuse-security-announce\/2020-07\/msg00085.html",
+							"name": "openSUSE-SU-2020:1106"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/rd38b4185a797b324c8dd940d9213cf99fcdc2dbf1fc5a63ba7dee8c9@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200902 [jira] [Commented] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/ra32c7103ded9041c7c1cb8c12c8d125a6b2f3f3270e2937ef8417fac@%3Cgitbox.hive.apache.org%3E",
+							"name": "[hive-gitbox] 20200912 [GitHub] [hive] rajkrrsingh opened a new pull request #1403: Hive 24039 : Update jquery version to mitigate CVE-2020-11023"
+						},
+						{
+							"source": "MISC",
+							"url": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released",
+							"name": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released"
+						},
+						{
+							"source": "info",
+							"url": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/",
+							"name": "https:\/\/blog.jquery.com\/2020\/04\/10\/jquery-3-5-0-released\/"
+						},
+						{
+							"source": "MLIST",
+							"url": "https:\/\/lists.apache.org\/thread.html\/r9c5fda81e4bca8daee305b4c03283dddb383ab8428a151d4cb0b3b15@%3Cissues.hive.apache.org%3E",
+							"name": "[hive-issues] 20200813 [jira] [Updated] (HIVE-24039) Update jquery version to mitigate CVE-2020-11023"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*",
+								"versionStartIncluding": "1.0.3",
+								"versionEndExcluding": "3.5.0"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": false,
+			"fileName": "main.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\routes\\main.js",
+			"md5": "47f99009e96100e06d1fadc0f465475a",
+			"sha1": "6f9e280f2ddbcc3ada175acf20f12694ec7a375d",
+			"sha256": "b9d9fb59ab84787c5c4d32f35e107352e4f11d8eec0410ff6b0f41d95c2ac80b",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": true,
+			"fileName": "mathjs:3.10.1",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?mathjs",
+			"projectReferences": [
+				"package-lock.json: transitive"
+			],
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "package.json",
+						"name": "name",
+						"value": "mathjs"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "name",
+						"value": "mathjs"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "version",
+						"value": "3.10.1"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:npm\/mathjs@3.10.1",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:npm\/mathjs@3.10.1"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NPM",
+					"name": "551",
+					"unscored": "true",
+					"severity": "critical",
+					"cwes": [],
+					"description": "math.js before 3.17.0 had an issue where private properties such as a constructor could be replaced by using unicode characters when creating an object.",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 551: Arbitrary Code Execution",
+							"name": "- [Commit #a60f3c8](https:\/\/github.com\/josdejong\/mathjs\/commit\/a60f3c8d9dd714244aed7a5569c3dccaa3a4e761)\n- https:\/\/github.com\/josdejong\/mathjs\/blob\/master\/HISTORY.md#2017-11-18-version-3170"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:mathjs:\\<3.17.0:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				},
+				{
+					"source": "NPM",
+					"name": "552",
+					"unscored": "true",
+					"severity": "critical",
+					"cwes": [],
+					"description": "math.js before 3.17.0 had an arbitrary code execution in the JavaScript engine. Creating a typed function with JavaScript code in the name could result arbitrary execution.",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 552: Arbitrary Code Execution",
+							"name": "- https:\/\/github.com\/josdejong\/mathjs\/blob\/master\/HISTORY.md#2017-11-18-version-3170\n- [Commit #8d2d48d](https:\/\/github.com\/josdejong\/mathjs\/commit\/8d2d48d81b3c233fb64eb2ec1d7a9e1cf6a55a90)"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:mathjs:\\<3.17.0:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CVE-2017-1001002",
+					"severity": "CRITICAL",
+					"cvssv3": {
+						"baseScore": 9.8,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "N",
+						"userInteraction": "N",
+						"scope": "U",
+						"confidentialityImpact": "H",
+						"integrityImpact": "H",
+						"availabilityImpact": "H",
+						"baseSeverity": "CRITICAL"
+					},
+					"cwes": [],
+					"description": "math.js before 3.17.0 had an arbitrary code execution in the JavaScript engine. Creating a typed function with JavaScript code in the name could result arbitrary execution.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/1e6c8e7a-4371-43fe-8772-1aedc76baca1?component-type=npm&component-name=mathjs&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "[CVE-2017-1001002] math.js before 3.17.0 had an arbitrary code execution in the JavaScript engine. ..."
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:mathjs:3.10.1:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CVE-2017-1001003",
+					"severity": "CRITICAL",
+					"cvssv3": {
+						"baseScore": 9.8,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "N",
+						"userInteraction": "N",
+						"scope": "U",
+						"confidentialityImpact": "H",
+						"integrityImpact": "H",
+						"availabilityImpact": "H",
+						"baseSeverity": "CRITICAL"
+					},
+					"cwes": [],
+					"description": "math.js before 3.17.0 had an issue where private properties such as a constructor could be replaced by using unicode characters when creating an object.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/51031497-800c-43b4-a798-95c20e0d17e9?component-type=npm&component-name=mathjs&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "[CVE-2017-1001003]  Improper Input Validation"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:mathjs:3.10.1:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+					"severity": "HIGH",
+					"cvssv3": {
+						"baseScore": 8.8,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "L",
+						"userInteraction": "N",
+						"scope": "U",
+						"confidentialityImpact": "H",
+						"integrityImpact": "H",
+						"availabilityImpact": "H",
+						"baseSeverity": "HIGH"
+					},
+					"cwes": [
+						"CWE-94"
+					],
+					"description": "The software constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/6e815112-1cfa-48a6-a98f-e5e5fd70d4fa?component-type=npm&component-name=mathjs&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:mathjs:3.10.1:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": true,
+			"fileName": "node-serialize:0.0.4",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?node-serialize",
+			"projectReferences": [
+				"package-lock.json: transitive"
+			],
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "package.json",
+						"name": "name",
+						"value": "node-serialize"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "name",
+						"value": "node-serialize"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "version",
+						"value": "0.0.4"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:npm\/node-serialize@0.0.4",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:npm\/node-serialize@0.0.4"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NPM",
+					"name": "311",
+					"unscored": "true",
+					"severity": "critical",
+					"cwes": [],
+					"description": "Affected versions of `node-serialize` can be abused to execute arbitrary code via an [immediately invoked function expression](https:\/\/en.wikipedia.org\/wiki\/Immediately-invoked_function_expression) (IIFE) if untrusted user input is passed into `unserialize()`.",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 311: Code Execution through IIFE",
+							"name": "- https:\/\/opsecx.com\/index.php\/2017\/02\/08\/exploiting-node-js-deserialization-bug-for-remote-code-execution\/\n- [Issue #4](https:\/\/github.com\/luin\/serialize\/issues\/4)"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:node-serialize:\\>\\=0.0.0:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": false,
+			"fileName": "passport.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\passport.js",
+			"md5": "7f7bebdd22cbc7a70b26025a549bf2ae",
+			"sha1": "b53c71b647f172277a99a6500fccc36bc1b02576",
+			"sha256": "f38134a8af036d9a64ecd4320c43ef6eda96e4d3f31d32024bf3d191f5a5f377",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "product.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\product.js",
+			"md5": "04a66b9ad3777dc5e4f2ab069b10613c",
+			"sha1": "62e420f241d19a42f1c295675fa2d46abe9fc174",
+			"sha256": "fb29de791431e3fedb8d06d0c1b17eb7b14ea7abb95a9f5e3c4e9b57da57e371",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "server.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\server.js",
+			"md5": "60361c3a7367f4f227a6008eb25e03c3",
+			"sha1": "eb6881e39701effc456a6689ddf4bc1d5abc5076",
+			"sha256": "a037c232d02824116caad3b5ff979ecba8407020427a8af6794a3e9ce240e750",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "server.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\server.js",
+			"md5": "0a951e6da756ffead41bb81a96e0b79f",
+			"sha1": "9b01e1a3e7d15d24fd7182555e671bf4fa4cc168",
+			"sha256": "128e0fe4c33ebbc3a70443f959d69d2e31d96bf5c7ee4aa3709a4903e1d4f780",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "showdown.min.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\public\\assets\\showdown.min.js",
+			"md5": "94b351ee924f173d336d70727ccd854e",
+			"sha1": "cfd43eef99ddac03302f43ef190b174971cb5f35",
+			"sha256": "ee560e7c947e8d757948642dbd31899ed39df0d5189688ad8f2999fd9baafd09",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": true,
+			"fileName": "typed-function:0.10.5",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?typed-function",
+			"projectReferences": [
+				"package-lock.json: transitive"
+			],
+			"evidenceCollected": {
+				"vendorEvidence": [
+					{
+						"type": "vendor",
+						"confidence": "HIGH",
+						"source": "package.json",
+						"name": "name",
+						"value": "typed-function"
+					}
+				],
+				"productEvidence": [
+					{
+						"type": "product",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "name",
+						"value": "typed-function"
+					}
+				],
+				"versionEvidence": [
+					{
+						"type": "version",
+						"confidence": "HIGHEST",
+						"source": "package.json",
+						"name": "version",
+						"value": "0.10.5"
+					}
+				]
+			},
+			"packages": [
+				{
+					"id": "pkg:npm\/typed-function@0.10.5",
+					"confidence": "HIGHEST",
+					"url": "https:\/\/ossindex.sonatype.org\/component\/pkg:npm\/typed-function@0.10.5"
+				}
+			],
+			"vulnerabilities": [
+				{
+					"source": "NPM",
+					"name": "819",
+					"unscored": "true",
+					"severity": "high",
+					"cwes": [],
+					"description": "Versions of `typed-function` prior to 0.10.6 are vulnerable to Arbitrary JavaScript Execution. Function names are not properly sanitized and may allow an attacker to execute arbitrary code.",
+					"notes": "",
+					"references": [
+						{
+							"source": "Advisory 819: Arbitrary JavaScript Execution",
+							"name": "- [GitHub Commit](https:\/\/github.com\/josdejong\/typed-function\/commit\/6478ef4f2c3f3c2d9f2c820e2db4b4ba3425e6fe?diff=split#diff-9e1f22c2954a38db1fdf444dbc74e0a8)\n- [Snyk Report](https:\/\/snyk.io\/vuln\/SNYK-JS-TYPEDFUNCTION-174139)"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:typed-function:\\<0.10.6:*:*:*:*:*:*:*"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CVE-2017-1001004",
+					"severity": "HIGH",
+					"cvssv3": {
+						"baseScore": 8.8,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "N",
+						"userInteraction": "R",
+						"scope": "U",
+						"confidentialityImpact": "H",
+						"integrityImpact": "H",
+						"availabilityImpact": "H",
+						"baseSeverity": "HIGH"
+					},
+					"cwes": [],
+					"description": "typed-function before 0.10.6 had an arbitrary code execution in the JavaScript engine. Creating a typed function with JavaScript code in the name could result arbitrary execution.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/9cc5f186-a03a-4c49-910a-047ea7bae9ec?component-type=npm&component-name=typed-function&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "[CVE-2017-1001004]  Improper Input Validation"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:typed-function:0.10.5:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				},
+				{
+					"source": "OSSINDEX",
+					"name": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+					"severity": "HIGH",
+					"cvssv3": {
+						"baseScore": 8.8,
+						"attackVector": "N",
+						"attackComplexity": "L",
+						"privilegesRequired": "L",
+						"userInteraction": "N",
+						"scope": "U",
+						"confidentialityImpact": "H",
+						"integrityImpact": "H",
+						"availabilityImpact": "H",
+						"baseSeverity": "HIGH"
+					},
+					"cwes": [
+						"CWE-94"
+					],
+					"description": "The software constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment.",
+					"notes": "",
+					"references": [
+						{
+							"source": "OSSINDEX",
+							"url": "https:\/\/ossindex.sonatype.org\/vuln\/656aa499-2044-4aaf-a920-83bfed2e56d9?component-type=npm&component-name=typed-function&utm_source=dependency-check&utm_medium=integration&utm_content=6.0.1",
+							"name": "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+						}
+					],
+					"vulnerableSoftware": [
+						{
+							"software": {
+								"id": "cpe:2.3:a:*:typed-function:0.10.5:*:*:*:*:*:*:*",
+								"vulnerabilityIdMatched": "true"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"isVirtual": false,
+			"fileName": "user.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\user.js",
+			"md5": "b218c8fcfd621dec24509bca70a00591",
+			"sha1": "4ecccdb032a4b409c1e6fac779ab0f7b746ad0cc",
+			"sha256": "bd1d6496fb80395a9898496d41c464f0d9687e616966266d5c1d2781cf31887a",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		},
+		{
+			"isVirtual": false,
+			"fileName": "vulns.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\vulns.js",
+			"md5": "fc85488feb6f9972053cb81409a9b394",
+			"sha1": "94d71a0212d99b856ba7f5ebfb51d4c3516393e5",
+			"sha256": "1f9934ccd03146bf94f4c856c33b198f30368dd5945a2c6fa38bfb0a21c8e72b",
+			"evidenceCollected": {
+				"vendorEvidence": [],
+				"productEvidence": [],
+				"versionEvidence": []
+			}
+		}
+	]
+}
