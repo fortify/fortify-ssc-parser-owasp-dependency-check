@@ -31,7 +31,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "app.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\routes\\app.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\routes\\app.js",
 			"md5": "a759f5a3f4d40cae2b101a7c15025d00",
 			"sha1": "71b2d798c29f4c6684f5e3cebfd5791a168d5d27",
 			"sha256": "cccf34466457f3d4526c4f24df10620c0d72931c04429db6926a1460716a62bb",
@@ -44,7 +44,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "appHandler.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\appHandler.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\core\\appHandler.js",
 			"md5": "08c5c76a25abfd388451af31309173a5",
 			"sha1": "a104bda9bc75f53a62d9fa56741c78066dd8a05d",
 			"sha256": "ca373cab1762b91e80de86a061a928a647c1a6fe39ee650f6fcef1abd25a1d6f",
@@ -57,7 +57,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "authHandler.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\authHandler.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\core\\authHandler.js",
 			"md5": "6ba741effb92d3ac737ca300defa23e5",
 			"sha1": "b6d1ce02838610953be54d966ff678ee45bc06b8",
 			"sha256": "82d6a8fe0285c4118477b128d5330f75219e5900cf009062e96486ebf97a03ef",
@@ -70,7 +70,7 @@
 		{
 			"isVirtual": true,
 			"fileName": "bcrypt:1.0.3",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?bcrypt",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\package-lock.json?bcrypt",
 			"projectReferences": [
 				"package-lock.json: transitive"
 			],
@@ -138,7 +138,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "db.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\db.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\config\\db.js",
 			"md5": "1d55fb76773dccdc9da82268c3dd9dc3",
 			"sha1": "2ccac218fc3a1d8c3fb69282c14b86f97378b0b7",
 			"sha256": "8f4444dda9f866dc76a28b4b407f6b7b7d9bbf261b420e800a30d0245d325101",
@@ -151,7 +151,7 @@
 		{
 			"isVirtual": true,
 			"fileName": "express-fileupload:0.4.0",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?express-fileupload",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\package-lock.json?express-fileupload",
 			"projectReferences": [
 				"package-lock.json: transitive"
 			],
@@ -256,7 +256,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "index.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\index.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\models\\index.js",
 			"md5": "c40371ec24d351796efd9e36bf9a9808",
 			"sha1": "5830c1da1bf3441eca8d36ddefc0d798a72e565a",
 			"sha256": "6c8ff950841be7d2731e02c0e9e0a5e4c74213e00fc622e54847d7853151d1e4",
@@ -269,7 +269,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "jquery-3.2.1.min.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\public\\assets\\jquery-3.2.1.min.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\public\\assets\\jquery-3.2.1.min.js",
 			"md5": "473957cfb255a781b42cb2af51d54a3b",
 			"sha1": "67bdacbd077ee59f411109fd119ee9f58db15a5f",
 			"sha256": "75b707d8761e2bfbd25fbd661f290a4f7fd11c48e1bf53a36dc6bd8a0034fa35",
@@ -1079,7 +1079,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "main.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\routes\\main.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\routes\\main.js",
 			"md5": "47f99009e96100e06d1fadc0f465475a",
 			"sha1": "6f9e280f2ddbcc3ada175acf20f12694ec7a375d",
 			"sha256": "b9d9fb59ab84787c5c4d32f35e107352e4f11d8eec0410ff6b0f41d95c2ac80b",
@@ -1092,7 +1092,7 @@
 		{
 			"isVirtual": true,
 			"fileName": "mathjs:3.10.1",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?mathjs",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\package-lock.json?mathjs",
 			"projectReferences": [
 				"package-lock.json: transitive"
 			],
@@ -1289,7 +1289,7 @@
 		{
 			"isVirtual": true,
 			"fileName": "node-serialize:0.0.4",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?node-serialize",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\package-lock.json?node-serialize",
 			"projectReferences": [
 				"package-lock.json: transitive"
 			],
@@ -1357,7 +1357,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "passport.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\core\\passport.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\core\\passport.js",
 			"md5": "7f7bebdd22cbc7a70b26025a549bf2ae",
 			"sha1": "b53c71b647f172277a99a6500fccc36bc1b02576",
 			"sha256": "f38134a8af036d9a64ecd4320c43ef6eda96e4d3f31d32024bf3d191f5a5f377",
@@ -1370,7 +1370,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "product.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\product.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\models\\product.js",
 			"md5": "04a66b9ad3777dc5e4f2ab069b10613c",
 			"sha1": "62e420f241d19a42f1c295675fa2d46abe9fc174",
 			"sha256": "fb29de791431e3fedb8d06d0c1b17eb7b14ea7abb95a9f5e3c4e9b57da57e371",
@@ -1383,7 +1383,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "server.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\server.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\config\\server.js",
 			"md5": "60361c3a7367f4f227a6008eb25e03c3",
 			"sha1": "eb6881e39701effc456a6689ddf4bc1d5abc5076",
 			"sha256": "a037c232d02824116caad3b5ff979ecba8407020427a8af6794a3e9ce240e750",
@@ -1396,7 +1396,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "server.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\server.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\server.js",
 			"md5": "0a951e6da756ffead41bb81a96e0b79f",
 			"sha1": "9b01e1a3e7d15d24fd7182555e671bf4fa4cc168",
 			"sha256": "128e0fe4c33ebbc3a70443f959d69d2e31d96bf5c7ee4aa3709a4903e1d4f780",
@@ -1409,7 +1409,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "showdown.min.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\public\\assets\\showdown.min.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\public\\assets\\showdown.min.js",
 			"md5": "94b351ee924f173d336d70727ccd854e",
 			"sha1": "cfd43eef99ddac03302f43ef190b174971cb5f35",
 			"sha256": "ee560e7c947e8d757948642dbd31899ed39df0d5189688ad8f2999fd9baafd09",
@@ -1422,7 +1422,7 @@
 		{
 			"isVirtual": true,
 			"fileName": "typed-function:0.10.5",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\package-lock.json?typed-function",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\package-lock.json?typed-function",
 			"projectReferences": [
 				"package-lock.json: transitive"
 			],
@@ -1562,7 +1562,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "user.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\models\\user.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\models\\user.js",
 			"md5": "b218c8fcfd621dec24509bca70a00591",
 			"sha1": "4ecccdb032a4b409c1e6fac779ab0f7b746ad0cc",
 			"sha256": "bd1d6496fb80395a9898496d41c464f0d9687e616966266d5c1d2781cf31887a",
@@ -1575,7 +1575,7 @@
 		{
 			"isVirtual": false,
 			"fileName": "vulns.js",
-			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\TCVULN-CSATEMPLTYPESCRIPT-CSFJT\\config\\vulns.js",
+			"filePath": "C:\\bamboo-agent-home\\xml-data\\build-dir\\SAMPLE\\config\\vulns.js",
 			"md5": "fc85488feb6f9972053cb81409a9b394",
 			"sha1": "94d71a0212d99b856ba7f5ebfb51d4c3516393e5",
 			"sha256": "1f9934ccd03146bf94f4c856c33b198f30368dd5945a2c6fa38bfb0a21c8e72b",
