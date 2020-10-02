@@ -44,8 +44,7 @@ public final class Dependency {
 	}
 	
 	public final String getDependencyIdentifier() {
-		return StringUtils.defaultIfBlank(sha256, 
-			StringUtils.defaultIfBlank(sha1, 
-				StringUtils.defaultIfBlank(md5, getFilePathOrName())));
+		return getFilePathOrName() + "-" + StringUtils.defaultIfBlank(sha256, 
+			StringUtils.defaultIfBlank(sha1, md5));
 	}
 }

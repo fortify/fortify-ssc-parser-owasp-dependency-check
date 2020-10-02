@@ -44,9 +44,10 @@ import com.fortify.plugin.api.VulnerabilityHandler;
 
 class OWASPDependencyCheckParserPluginTest {
 	private static final String[] SAMPLE_FILES = {
-			//"dependency-check-report-java.json", 
-			//"dependency-check-report-php.json",
+			"dependency-check-report-java.json", 
+			"dependency-check-report-php.json",
 			"dependency-check-report-with-npm.json",
+			//"dependency-check-report.gitignore.json"
 	};
 	
 	private final ScanData getScanData(final String fileName) {
