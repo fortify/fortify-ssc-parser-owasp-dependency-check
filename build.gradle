@@ -39,7 +39,7 @@ configurations.all {
 }
 
 dependencies {
-    implementationExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.0.RELEASE', changing: false) { transitive = true }
+    implementationExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.1.RELEASE', changing: false) { transitive = true }
 }
 
 task dist(type: Zip) {
