@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.4.3](https://www.github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check/compare/v1.4.2...v1.4.3) (2022-05-03)
+
+
+### Bug Fixes
+
+* Add missing changelog entry in previous release ([649ec7f](https://www.github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check/commit/649ec7fb989cf3b3ab5f7651f02550a083d2a63a))
+* Update (potentially vulnerable) dependency versions ([03ef95f](https://www.github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check/commit/03ef95f1e62da92e51feb3d0941a480d8a9ff71e))
+
 ### [1.4.2](https://www.github.com/fortify-ps/fortify-ssc-parser-owasp-dependency-check/compare/v1.4.1...v1.4.2) (2022-05-03)
 
 
