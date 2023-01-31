@@ -1,0 +1,1 @@
+This Fortify SSC parser plugin allows for importing scan results from OWASP Dependency Check.
