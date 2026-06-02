@@ -13,6 +13,7 @@ import com.fortify.plugin.api.ScanData;
 import com.fortify.plugin.api.ScanParsingException;
 import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
+import com.fortify.plugin.spi.VulnerabilityAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.CustomVulnAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv3;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
@@ -22,6 +23,7 @@ import com.fortify.util.ssc.parser.json.ScanDataStreamingJsonParser;
 
 public class VulnerabilitiesParser {
 	private static final String ENGINE_TYPE = EngineTypeHelper.getEngineType();
+	private static final int MAX_LONG_TEXT_LENGTH = VulnerabilityAttribute.MAX_LONG_STRING_LENGTH;
 	private final ScanData scanData;
 	private final VulnerabilityHandler vulnerabilityHandler;
 
@@ -69,7 +71,8 @@ public class VulnerabilitiesParser {
 		vb.setLikelihood(2.5f);
 		
 		vb.setFileName(dependency.getFilePathOrName());
-		vb.setVulnerabilityAbstract(vulnerability.getDescription());
+		vb.setVulnerabilityAbstract(truncate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.description, truncate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
 		
 		try {
 			vb.setPriority(Priority.valueOf(StringUtils.capitalize(vulnerability.getSeverity().toLowerCase())));
@@ -111,10 +114,17 @@ public class VulnerabilitiesParser {
 		// TODO Add source field (NVD, OSSINDEX)
 		// TODO Add references?
 		
-		vb.setStringCustomAttributeValue(CustomVulnAttribute.notes, vulnerability.getNotes());
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.notes, truncate(vulnerability.getNotes(), MAX_LONG_TEXT_LENGTH));
 		
 		vb.completeVulnerability();
     }
+
+	private static String truncate(String value, int maxLength) {
+		if ( value==null || value.length()<=maxLength ) {
+			return value;
+		}
+		return value.substring(0, maxLength);
+	}
 
 	private final String getInstanceId(Dependency dependency, Vulnerability vulnerability) {
 		return DigestUtils.sha256Hex(dependency.getDependencyIdentifier()+vulnerability.getName());

@@ -5,7 +5,7 @@
     <plugin-info>
         <name>OWASP dependency-check parser plugin</name>
         <version><!--VERSION-->0.0<!--/VERSION--></version>
-        <data-version>1</data-version>
+        <data-version>2</data-version>
         <vendor name="Micro Focus" url="https://www.microfocus.com"/>
         <description>OWASP dependency-check parser plugin</description>
         <resources>

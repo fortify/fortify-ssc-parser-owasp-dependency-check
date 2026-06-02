@@ -52,7 +52,7 @@
 		{
 			"type": "template",
 			"title": "Description",
-			"key": "brief",
+			"key": "customAttributes.description",
 			"templateId": "COLLAPSE",
 			"dataType": "string"
 		}
@@ -113,6 +113,13 @@
 					"dataType": "string"
 				}
 			]
+		},
+		{
+			"type": "template",
+			"title": "Notes",
+			"key": "customAttributes.notes",
+			"templateId": "COLLAPSE",
+			"dataType": "string"
 		}
 	]
 ]
