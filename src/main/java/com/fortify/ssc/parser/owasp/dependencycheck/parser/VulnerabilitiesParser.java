@@ -71,8 +71,8 @@ public class VulnerabilitiesParser {
 		vb.setLikelihood(2.5f);
 		
 		vb.setFileName(dependency.getFilePathOrName());
-		vb.setVulnerabilityAbstract(truncate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
-		vb.setStringCustomAttributeValue(CustomVulnAttribute.description, truncate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
+		vb.setVulnerabilityAbstract(StringUtils.abbreviate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.description, StringUtils.abbreviate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
 		
 		try {
 			vb.setPriority(Priority.valueOf(StringUtils.capitalize(vulnerability.getSeverity().toLowerCase())));
@@ -114,17 +114,10 @@ public class VulnerabilitiesParser {
 		// TODO Add source field (NVD, OSSINDEX)
 		// TODO Add references?
 		
-		vb.setStringCustomAttributeValue(CustomVulnAttribute.notes, truncate(vulnerability.getNotes(), MAX_LONG_TEXT_LENGTH));
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.notes, StringUtils.abbreviate(vulnerability.getNotes(), MAX_LONG_TEXT_LENGTH));
 		
 		vb.completeVulnerability();
     }
-
-	private static String truncate(String value, int maxLength) {
-		if ( value==null || value.length()<=maxLength ) {
-			return value;
-		}
-		return value.substring(0, maxLength);
-	}
 
 	private final String getInstanceId(Dependency dependency, Vulnerability vulnerability) {
 		return DigestUtils.sha256Hex(dependency.getDependencyIdentifier()+vulnerability.getName());
