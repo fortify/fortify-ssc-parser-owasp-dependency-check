@@ -24,7 +24,7 @@ public class ScanParser {
 			.handler("/projectInfo/name", jp -> scanBuilder.setBuildId(jp.getValueAsString()))
 			.handler("/projectInfo/version", jp -> scanBuilder.setScanLabel(jp.getValueAsString()))
 			.handler("/dependencies", jp -> scanBuilder.setNumFiles(jp.countArrayEntries()))
-			.parse(scanData);
+			.parse(scanData, scanData.getScanEntries().get(0));
 		scanBuilder.completeScan();
 	}
 }

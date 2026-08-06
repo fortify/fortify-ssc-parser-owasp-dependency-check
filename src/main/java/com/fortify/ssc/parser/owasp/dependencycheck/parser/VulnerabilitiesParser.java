@@ -18,11 +18,11 @@ import com.fortify.ssc.parser.owasp.dependencycheck.CustomVulnAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv3;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
-import com.fortify.util.ssc.parser.EngineTypeHelper;
+import com.fortify.util.ssc.parser.PluginXmlHelper;
 import com.fortify.util.ssc.parser.json.ScanDataStreamingJsonParser;
 
 public class VulnerabilitiesParser {
-	private static final String ENGINE_TYPE = EngineTypeHelper.getEngineType();
+	private static final String ENGINE_TYPE = PluginXmlHelper.getPluginXmlDescriptor().getEngineType();
 	private static final int MAX_LONG_TEXT_LENGTH = VulnerabilityAttribute.MAX_LONG_STRING_LENGTH;
 	private final ScanData scanData;
 	private final VulnerabilityHandler vulnerabilityHandler;
@@ -40,7 +40,7 @@ public class VulnerabilitiesParser {
 	public final void parse() throws ScanParsingException, IOException {
 		new ScanDataStreamingJsonParser()
 			.handler("/dependencies/*", Dependency.class, this::handleDependency)
-			.parse(scanData);
+			.parse(scanData, scanData.getScanEntries().get(0));
 	}
 	
     private final void handleDependency(Dependency dependency) {
