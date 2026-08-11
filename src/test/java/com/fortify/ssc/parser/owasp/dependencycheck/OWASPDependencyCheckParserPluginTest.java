@@ -60,7 +60,7 @@ class OWASPDependencyCheckParserPluginTest {
 			
 			@Override
 			public List<ScanEntry> getScanEntries() {
-				return null;
+				return Arrays.asList((ScanEntry) () -> fileName);
 			}
 			
 			@Override
