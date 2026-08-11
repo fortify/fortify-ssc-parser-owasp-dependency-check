@@ -10,6 +10,7 @@ import com.fortify.plugin.api.BasicVulnerabilityBuilder.Priority;
 import com.fortify.plugin.api.FortifyAnalyser;
 import com.fortify.plugin.api.FortifyKingdom;
 import com.fortify.plugin.api.ScanData;
+import com.fortify.plugin.api.ScanEntry;
 import com.fortify.plugin.api.ScanParsingException;
 import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
@@ -25,10 +26,12 @@ public class VulnerabilitiesParser {
 	private static final String ENGINE_TYPE = PluginXmlHelper.getPluginXmlDescriptor().getEngineType();
 	private static final int MAX_LONG_TEXT_LENGTH = VulnerabilityAttribute.MAX_LONG_STRING_LENGTH;
 	private final ScanData scanData;
+	private final ScanEntry scanEntry;
 	private final VulnerabilityHandler vulnerabilityHandler;
 
-    public VulnerabilitiesParser(final ScanData scanData, final VulnerabilityHandler vulnerabilityHandler) {
+    public VulnerabilitiesParser(final ScanData scanData, final ScanEntry scanEntry, final VulnerabilityHandler vulnerabilityHandler) {
     	this.scanData = scanData;
+    	this.scanEntry = scanEntry;
 		this.vulnerabilityHandler = vulnerabilityHandler;
 	}
     
@@ -40,7 +43,7 @@ public class VulnerabilitiesParser {
 	public final void parse() throws ScanParsingException, IOException {
 		new ScanDataStreamingJsonParser()
 			.handler("/dependencies/*", Dependency.class, this::handleDependency)
-			.parse(scanData, scanData.getScanEntries().get(0));
+			.parse(scanData, scanEntry);
 	}
 	
     private final void handleDependency(Dependency dependency) {

@@ -7,11 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import com.fortify.plugin.api.ScanBuilder;
 import com.fortify.plugin.api.ScanData;
+import com.fortify.plugin.api.ScanEntry;
 import com.fortify.plugin.api.ScanParsingException;
 import com.fortify.plugin.api.VulnerabilityHandler;
 import com.fortify.plugin.spi.ParserPlugin;
 import com.fortify.ssc.parser.owasp.dependencycheck.parser.ScanParser;
 import com.fortify.ssc.parser.owasp.dependencycheck.parser.VulnerabilitiesParser;
+import com.fortify.util.ssc.parser.ScanEntryHelper;
 
 public class OWASPDependencyCheckParserPlugin implements ParserPlugin<CustomVulnAttribute> {
     private static final Logger LOG = LoggerFactory.getLogger(OWASPDependencyCheckParserPlugin.class);
@@ -33,11 +35,15 @@ public class OWASPDependencyCheckParserPlugin implements ParserPlugin<CustomVuln
 
     @Override
     public void parseScan(final ScanData scanData, final ScanBuilder scanBuilder) throws ScanParsingException, IOException {
-        new ScanParser(scanData, scanBuilder).parse();
+        new ScanParser(scanData, getScanEntry(scanData), scanBuilder).parse();
     }
 
 	@Override
 	public void parseVulnerabilities(final ScanData scanData, final VulnerabilityHandler vulnerabilityHandler) throws ScanParsingException, IOException {
-		new VulnerabilitiesParser(scanData, vulnerabilityHandler).parse();
+		new VulnerabilitiesParser(scanData, getScanEntry(scanData), vulnerabilityHandler).parse();
+	}
+
+	private final ScanEntry getScanEntry(final ScanData scanData) {
+		return ScanEntryHelper.getScanEntryByName(scanData, name -> name.endsWith(".json"));
 	}
 }
