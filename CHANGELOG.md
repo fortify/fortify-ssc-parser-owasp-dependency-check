@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/fortify/fortify-ssc-parser-owasp-dependency-check/compare/v1.4.4...v1.4.5) (2026-08-11)
+
+
+### Bug Fixes
+
+* Upgrade dependencies ([bf7bf63](https://github.com/fortify/fortify-ssc-parser-owasp-dependency-check/commit/bf7bf632fa6fe234c043eb2cfa8c7823b9102c2b))
+
 ## [1.4.4](https://github.com/fortify/fortify-ssc-parser-owasp-dependency-check/compare/v1.4.3...v1.4.4) (2026-06-24)
 
 
