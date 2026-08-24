@@ -16,5 +16,3 @@ lombok.config
 .classpath
 .project
 *.fpr
-.vscode/
-.fortify/
