@@ -16,8 +16,6 @@ package com.fortify.ssc.parser.owasp.dependencycheck;
 public enum CustomVulnAttribute implements com.fortify.plugin.spi.VulnerabilityAttribute {
 	fileName(AttrType.STRING),
 	source(AttrType.STRING),
-	name(AttrType.STRING),
-	cveUrl(AttrType.STRING),
 	description(AttrType.LONG_STRING),
 	notes(AttrType.LONG_STRING),
 	cvssVersion(AttrType.STRING),
@@ -28,6 +26,18 @@ public enum CustomVulnAttribute implements com.fortify.plugin.spi.VulnerabilityA
 	cvssIntegrityImpact(AttrType.STRING),
 	cvssAvailabilityImpact(AttrType.STRING),
 	cwes(AttrType.STRING),
+	// Open-source issue attributes recognized by the SSC Open Source view
+	externalId(AttrType.STRING),
+	externalUrl(AttrType.STRING),
+	componentPurl(AttrType.STRING),
+	// Component / open-source package attributes (parsed from Package URL)
+	componentPackageType(AttrType.STRING),
+	componentNamespace(AttrType.STRING),
+	componentName(AttrType.STRING),
+	componentVersion(AttrType.STRING),
+	componentLicenses(AttrType.LONG_STRING),
+	// Stored for querying/future use; intentionally not referenced in the view template
+	componentDescription(AttrType.LONG_STRING),
     ;
 
     private final AttrType attributeType;

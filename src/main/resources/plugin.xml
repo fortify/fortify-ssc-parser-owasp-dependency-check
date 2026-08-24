@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<plugin xmlns="xmlns://www.fortify.com/schema/pluginmanifest-1.0.xsd"
+<plugin xmlns="xmlns://www.fortify.com/schema/pluginmanifest-1.1.xsd"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PluginDescriptor"
-        id="com.fortify.ssc.parser.owasp.dependencycheck" api-version="1.0">
+        id="com.fortify.ssc.parser.owasp.dependencycheck" api-version="1.2">
     <plugin-info>
         <name>OWASP dependency-check parser plugin</name>
         <version><!--VERSION-->0.0<!--/VERSION--></version>
-        <data-version>2</data-version>
+        <data-version>3</data-version>
         <vendor name="Open Text" url="https://opentext.com"/>
-        <description>OWASP dependency-check parser plugin</description>
+        <description>OWASP dependency-check parser plugin (results shown on SSC Audit and Open Source pages)</description>
         <resources>
             <localization>
                 <language id="default" location="/resources/dependency-check_en.properties"/>
@@ -25,6 +25,7 @@
         <view-template location="/viewtemplate/OWASPDependencyCheckTemplate.json">
             <description>Default OWASP dependency-check vulnerability view template.</description>
         </view-template>
+        <parser-type>DEPENDENCY_SCAN</parser-type>
     </issue-parser>
 </plugin>
 

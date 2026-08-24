@@ -18,6 +18,8 @@ import com.fortify.plugin.spi.VulnerabilityAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.CustomVulnAttribute;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.CVSSv3;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Dependency;
+import com.fortify.ssc.parser.owasp.dependencycheck.domain.DependencyPackage;
+import com.fortify.ssc.parser.owasp.dependencycheck.domain.PackageUrl;
 import com.fortify.ssc.parser.owasp.dependencycheck.domain.Vulnerability;
 import com.fortify.util.ssc.parser.PluginXmlHelper;
 import com.fortify.util.ssc.parser.json.ScanDataStreamingJsonParser;
@@ -65,15 +67,16 @@ public class VulnerabilitiesParser {
 		
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.fileName, dependency.getFileName());
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.source, vulnerability.getSource());
-		vb.setStringCustomAttributeValue(CustomVulnAttribute.name, vulnerability.getName());
-		vb.setStringCustomAttributeValue(CustomVulnAttribute.cveUrl, "https://nvd.nist.gov/vuln/detail/"+vulnerability.getName());
+		// externalId/externalUrl are the canonical CVE attributes read by the SSC Open Source view
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.externalId, vulnerability.getName());
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.externalUrl, "https://nvd.nist.gov/vuln/detail/"+vulnerability.getName());
 		
 		// Set mandatory values to JavaDoc-recommended values
 		vb.setAccuracy(5.0f);
 		vb.setConfidence(2.5f);
 		vb.setLikelihood(2.5f);
 		
-		vb.setFileName(dependency.getFilePathOrName());
+		vb.setFileName(StringUtils.defaultIfBlank(dependency.getFileName(), dependency.getFilePathOrName()));
 		vb.setVulnerabilityAbstract(StringUtils.abbreviate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.description, StringUtils.abbreviate(vulnerability.getDescription(), MAX_LONG_TEXT_LENGTH));
 		
@@ -110,17 +113,48 @@ public class VulnerabilitiesParser {
 		if ( cwes!=null && cwes.length>0 ) {
 			// TODO Should this allow us to group by CWE in SSC? Doesn't currently work.
 			vb.setMappedCategory(cwes[0].replace("CWE-", "CWE ID "));
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.cwes, String.join(", ", cwes));
+			// Store CWE numbers only, as expected by the SSC Open Source view
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cwes, String.join(", ", cwes).replace("CWE-", ""));
 		}
 		
-		// TODO Add dependency description field?
 		// TODO Add source field (NVD, OSSINDEX)
 		// TODO Add references?
+		
+		setComponentAttributes(vb, dependency);
 		
 		vb.setStringCustomAttributeValue(CustomVulnAttribute.notes, StringUtils.abbreviate(vulnerability.getNotes(), MAX_LONG_TEXT_LENGTH));
 		
 		vb.completeVulnerability();
     }
+
+	/**
+	 * Populate the open-source component attributes read by the SSC Open Source page,
+	 * derived from the dependency's Package URL together with its license and description.
+	 */
+	private final void setComponentAttributes(StaticVulnerabilityBuilder vb, Dependency dependency) {
+		PackageUrl purl = getPackageUrl(dependency);
+		if ( purl!=null ) {
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPurl, purl.getCoordinates());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPackageType, purl.getType());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentNamespace, purl.getNamespace());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentName, purl.getName());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentVersion, purl.getVersion());
+		}
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.componentLicenses, StringUtils.abbreviate(dependency.getLicense(), MAX_LONG_TEXT_LENGTH));
+		// Stored for querying/future use; intentionally not referenced in the view template
+		vb.setStringCustomAttributeValue(CustomVulnAttribute.componentDescription, StringUtils.abbreviate(dependency.getDescription(), MAX_LONG_TEXT_LENGTH));
+	}
+
+	private final PackageUrl getPackageUrl(Dependency dependency) {
+		DependencyPackage[] packages = dependency.getPackages();
+		if ( packages!=null ) {
+			for ( DependencyPackage pkg : packages ) {
+				PackageUrl purl = PackageUrl.parse(pkg.getId());
+				if ( purl!=null ) { return purl; }
+			}
+		}
+		return null;
+	}
 
 	private final String getInstanceId(Dependency dependency, Vulnerability vulnerability) {
 		return DigestUtils.sha256Hex(dependency.getDependencyIdentifier()+vulnerability.getName());
