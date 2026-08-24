@@ -15,7 +15,7 @@
 				{
 					"type": "template",
 					"title": "Vulnerability",
-					"key": "customAttributes.name",
+					"key": "customAttributes.externalId",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
@@ -43,7 +43,7 @@
 				{
 					"type": "template",
 					"title": "CVE URL",
-					"key": "customAttributes.cveUrl",
+					"key": "customAttributes.externalUrl",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				}

@@ -24,31 +24,17 @@
  ******************************************************************************/
 package com.fortify.ssc.parser.owasp.dependencycheck.domain;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 
+/**
+ * Represents a single entry in an OWASP dependency-check dependency's
+ * <code>packages</code> array. The <code>id</code> field holds a Package URL
+ * (purl) identifying the open-source component, for example
+ * <code>pkg:maven/javax.activation/activation@1.1.1</code>.
+ */
 @Getter
-public final class Dependency {
-	@JsonProperty private String fileName;
-	@JsonProperty private String filePath;
-	@JsonProperty private String md5;
-	@JsonProperty private String sha1;
-	@JsonProperty private String sha256;
-	@JsonProperty private String description;
-	@JsonProperty private String license;
-	@JsonProperty private String[] projectReferences;
-	@JsonProperty private DependencyPackage[] packages;
-	@JsonProperty private Vulnerability[] vulnerabilities;
-	
-	public final String getFilePathOrName() {
-		return StringUtils.isNotBlank(filePath)?filePath:fileName;
-	}
-	
-	public final String getDependencyIdentifier() {
-		return getFilePathOrName() + "-" + StringUtils.defaultIfBlank(sha256, 
-			StringUtils.defaultIfBlank(sha1, md5));
-	}
+public final class DependencyPackage {
+	@JsonProperty private String id;
 }
