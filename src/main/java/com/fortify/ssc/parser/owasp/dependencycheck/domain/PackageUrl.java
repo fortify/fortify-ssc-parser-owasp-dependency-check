@@ -39,6 +39,10 @@ import lombok.RequiredArgsConstructor;
  * Only the components required by this plugin are exposed. Non-purl identifiers
  * (for example CPE strings) result in a <code>null</code> return value from
  * {@link #parse(String)}.
+ * <p>
+ * Expected format (see the <a href="https://github.com/package-url/purl-spec">purl spec</a>):
+ * <code>pkg:type/namespace/name@version?qualifiers#subpath</code>, where
+ * <code>namespace</code> is optional and may itself contain <code>/</code>-separated segments.
  */
 @Getter
 @RequiredArgsConstructor
@@ -53,7 +57,8 @@ public final class PackageUrl {
 	/**
 	 * Parse the given Package URL string, returning a {@link PackageUrl} instance
 	 * or <code>null</code> if the input is blank, not a purl, or does not contain
-	 * at least a type and name.
+	 * at least a type and name. Expected format:
+	 * <code>pkg:type/namespace/name@version?qualifiers#subpath</code>.
 	 */
 	public static final PackageUrl parse(String purl) {
 		if ( StringUtils.isBlank(purl) || !purl.startsWith(PURL_PREFIX) ) {

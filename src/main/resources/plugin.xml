@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <plugin xmlns="xmlns://www.fortify.com/schema/pluginmanifest-1.1.xsd"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PluginDescriptor"
-        id="com.fortify.ssc.parser.owasp.dependencycheck" api-version="1.1">
+        id="com.fortify.ssc.parser.owasp.dependencycheck" api-version="1.2">
     <plugin-info>
         <name>OWASP dependency-check parser plugin</name>
         <version><!--VERSION-->0.0<!--/VERSION--></version>
